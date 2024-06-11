@@ -3,4 +3,4 @@ Repo Projek PEMWEB
 
 Project start : 11 Mei 2024
 
-Lambung Mangkuirat University, Computer Sience Edu.
+Lambung Mangkurat University, Computer Sience Edu.
