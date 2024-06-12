@@ -1,246 +1,278 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout Dua Kolom</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LOGIN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <style>
-    body {
-        margin: 0;
-        font-family: 'Segoe UI';
-        background-color: black;
-        color: white;
-    }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI';
+            background-color: black;
+        }
 
-    .container {
-        display: flex;
-        height: 100%;
-    }
+        .container {
+            display: flex;
+            height: 100%;
+        }
 
-    .header {    
-        background-color: black;
-        color: white;
-    }
+        .header {
+            background-color: black;
+            color: white;
+        }
 
-    .line {
-        border-top: 1px solid white;
-        height: 1px;
-    }
+        .line {
+            border-top: 1px solid white;
+            height: 1px;
+        }
 
-    
-    .perhatian {
-        background-color: black;
-        color: white;
-        text-align: center;
-    }
 
-    .garis-perhatian {
-        background-color: white ;
-        height: 5px ;
-        opacity: 100%;
-        position: relative;
-        bottom: 15px;
-    }        
+        .perhatian {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
 
-    .perhatian, p {
-        padding: 20px;
-        line-height: 30px;
-        position: relative;
-        bottom: 5px;
-    }
+        .garis-perhatian {
+            background-color: white;
+            height: 5px;
+            opacity: 100%;
+            position: relative;
+            bottom: 15px;
+        }
 
-    .left {
-        flex: 1;
-        background-color: black;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-    .right {
-        flex: 1;
-        background-color: black;
-        color: white;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-    
-    .keterangantahu {
-        margin-top: 10px;
-        text-align: justify;
-    }
+        .perhatian,
+        p {
+            padding: 20px;
+            line-height: 30px;
+            position: relative;
+            bottom: 5px;
+        }
 
-    .keterangantempe {
-        margin-top: 150px;
-        text-align: justify;
-    }
+        .left {
+            flex: 1;
+            background-color: black;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-    .keteranganayam {
-        margin-top: 135px;
-        text-align: justify;
-    }
+        .right {
+            flex: 1;
+            background-color: black;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-    .keterangandaging {
-        margin-top: 130px;
-        text-align: justify;
-    }
+        .keterangantahu {
+            margin-top: 10px;
+            text-align: justify;
+        }
 
-    .keterangantelur {
-        margin-top: 130px;
-        text-align: justify;
-    }
-    
-    .titik1, .titik2, .titik3, .titik4, .titik5 {
-        margin-top: 10px;
-        text-align: justify;
-    }
+        .keterangantempe {
+            margin-top: 150px;
+            text-align: justify;
+        }
 
-    .tombol1, .tombol2, .tombol3, .tombol4, .tombol5 {
-        position: relative;
-        left: 20px;
-        top: 20px;
-        border-radius: 5px;
-        border: none;
-        padding: 5px;
-        margin-right: 20px;
-        background-color: #5d5d5d;
-        color: white;
-        width: 90px;
-    }
+        .keteranganayam {
+            margin-top: 135px;
+            text-align: justify;
+        }
 
-    img {
-        height: 500px;
-        width: 700px;
-        position: relative;
-        right: 100px;
-        padding-bottom: 50px;
-    }
+        .keterangandaging {
+            margin-top: 130px;
+            text-align: justify;
+        }
 
-    .kalkulator {
-        display: grid;
-        background-color: #232222;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        height: 650px;
-        gap: 50px; 
-        padding: 50px; 
-    }
+        .keterangantelur {
+            margin-top: 130px;
+            text-align: justify;
+        }
+
+        .titik1,
+        .titik2,
+        .titik3,
+        .titik4,
+        .titik5 {
+            margin-top: 10px;
+            text-align: justify;
+        }
+
+        .tombol1,
+        .tombol2,
+        .tombol3,
+        .tombol4,
+        .tombol5 {
+            position: relative;
+            left: 20px;
+            top: 20px;
+            border-radius: 5px;
+            border: none;
+            padding: 5px;
+            margin-right: 20px;
+            background-color: #5d5d5d;
+            color: white;
+            width: 90px;
+        }
+
+        img {
+            height: 500px;
+            width: 700px;
+            position: relative;
+            right: 100px;
+            padding-bottom: 50px;
+        }
+
+        .kalkulator {
+            display: grid;
+            background-color: #232222;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            height: 650px;
+            gap: 50px;
+            padding: 50px;
+        }
+
+        .garis-kalkulator-kiri {
+            background-color: white;
+            height: 5px;
+            opacity: 100%;
+            position: relative;
+            bottom: 15px;
+        }
+
+        .kolom-kiri {
+            grid-row: 1 / 3;
+            background-color: #535353;
+            box-sizing: border-box;
+            border-radius: 50px;
+        }
+
+        .kolom-kiri h1 {
+            margin: 15px 20px 10px 20px;
+            line-height: 60px;
+            text-align: justify;
+        }
+
+        .kolom-kiri hr {
+            background-color: white;
+        }
+
+        .kolom-kiri h3 {
+            color: #FF9900;
+        }
+
+        .jumlahan {
+            font-size: 50px;
+        }
+
+        .kolom-kiri .hasil1 {
+            text-align: center;
+            font-size: 80px;
+            font-family: Verdana;
+        }
+
+        .total {
+            margin: 20px;
+            position: relative;
+            bottom: 20px;
+            font-family: Verdana;
+        }
+
+        .kolom-kanan-atas {
+            grid-column: 2;
+            grid-row: 1;
+            background-color: #535353;
+            padding: 20px;
+            height: 200px;
+            box-sizing: border-box;
+            border-radius: 25px;
+        }
+
+        .kolom-kanan-atas h2 {
+            color: #FF9900;
+        }
+
+        .protein {
+            font-family: Verdana;
+        }
+
+        .hasil2 {
+            text-align: center;
+            font-size: 50px;
+            font-family: Verdana;
+        }
+
+        .kolom-kanan-bawah {
+            grid-column: 2;
+            grid-row: 2;
+            background-color: #535353;
+            height: 300px;
+            box-sizing: border-box;
+            border-radius: 25px;
+        }
+
+        .today {
+            margin: 15px 20px 10px 20px;
+            font-family: Verdana;
+        }
+
+        .garis-kalkulator-kanan {
+            background-color: white;
+            height: 5px;
+            opacity: 100%;
+        }
+
+        .max {
+            color: #FF9900;
+            margin: 15px 20px 10px 20px;
+            position: relative;
+            top: 1px;
+            font-family: Verdana;
+        }
+
+        .hasil-today {
+            text-align: center;
+            font-size: 50px;
+            font-family: Verdana;
+        }
+
+        .hasil-max {
+            text-align: center;
+            font-size: 50px;
+            font-family: Verdana;
+        }
+
+        footer {
+            background-color: gray;
+        }
+
+        .text-sm {
+            font-family: 'Segoe UI';
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        .btn {
+            border: none;
+            border-radius: 25px;
+            background-color: #FFBE5C;
+        }
         
-    .garis-kalkulator-kiri {
-        background-color: white ;
-        height: 5px ;
-        opacity: 100%;
-        position: relative;
-        bottom: 15px;
-    }
-
-    .kolom-kiri {
-        grid-row: 1 / 3;
-        background-color: #535353;
-        box-sizing: border-box;
-        border-radius: 50px;
-    }
-
-    .kolom-kiri h1 {
-        margin: 15px 20px 10px 20px;
-        line-height: 60px;
-        text-align: justify;
-    }
-
-    .kolom-kiri hr {
-        background-color: white;
-    }
-
-    .kolom-kiri h3 {
-        color: #FF9900;
-    }
-
-    .jumlahan {
-        font-size: 50px;
-    }
-
-    .kolom-kiri .hasil1 {
-        text-align: center;
-        font-size: 80px;
-        font-family: Verdana;
-    }
-
-    .total {
-        margin: 20px;
-        position: relative;
-        bottom: 20px;
-        font-family: Verdana;
-    }
-
-    .kolom-kanan-atas {
-        grid-column: 2;
-        grid-row: 1;
-        background-color: #535353;
-        padding: 20px;
-        height: 200px;
-        box-sizing: border-box;
-        border-radius: 25px;
-    }
-
-    .kolom-kanan-atas h2 {
-        color: #FF9900;
-    }
-
-    .protein {
-        font-family: Verdana;
-    }
-
-    .hasil2 {
-        text-align: center; 
-        font-size: 50px;
-        font-family: Verdana;
-    }
-
-    .kolom-kanan-bawah {
-        grid-column: 2;
-        grid-row: 2;
-        background-color: #535353;
-        height: 300px;
-        box-sizing: border-box;
-        border-radius: 25px;
-    }
-
-    .today {
-        margin: 15px 20px 10px 20px;
-        font-family: Verdana;
-    }
-
-    .garis-kalkulator-kanan {
-        background-color: white ;
-        height: 5px ;
-        opacity: 100%;
-    }
-
-    .max {
-        color: #FF9900;
-        margin: 15px 20px 10px 20px;
-        position: relative;
-        top: 1px;
-        font-family: Verdana;
-    }
-
-    .hasil-today {
-        text-align: center;
-        font-size: 50px;
-        font-family: Verdana;
-    }
-
-    .hasil-max {
-        text-align: center;
-        font-size: 50px;
-        font-family: Verdana;
-    }
-
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-dark">
-        <div class="container-fluid">
+        <div class="container-fluid p-2">
             <a class="navbar-brand text-light ms-5" href="#">My Fitness</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -249,23 +281,23 @@
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item mx-5">
-                        <a class="nav-link active text-light" aria-current="page" href="#">Progresku</a>
+                        <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Progresku</a>
                     </li>
                     <li class="nav-item mx-5">
-                        <a class="nav-link active text-light" aria-current="page" href="#">Tentang</a>
+                        <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Tentang</a>
                     </li>
                     <li class="nav-item mx-5">
-                        <a class="nav-link active text-light" aria-current="page" href="#">Bantuan</a>
+                        <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Bantuan</a>
                     </li>
                 </ul>
                 <div class="d-flex ms-5">
-                    <a href="#" class="btn btn-light">SIGN UP</a>
+                    <a href="#" class="btn btn-light px-4 fw-bold">SIGN UP</a>
                 </div>
             </div>
         </div>
     </nav>
     <div>
-        <div class="kalkulator">
+        <div class="kalkulator text-white">
             <div class="kolom-kiri">
                 <h1 class="jumlahan"><b>255 + 255 + 255 + 255 + 255 + 255 + 255 + 255 + 255 </b></h1><br>
                 <hr class="garis-kalkulator-kiri">
@@ -288,9 +320,9 @@
     <hr class="garis-perhatian">
     <div class="perhatian">
         <p><b>Perhatian!!!</b> Berikut ini hanyalah Mencantumkan makanan umum beserta kandungan proteinnya.
-            Jika Anda mengonsumsi makanan di luar makanan tersebut, silakan cek kandungan gizinya di situs web terkait. 
+            Jika Anda mengonsumsi makanan di luar makanan tersebut, silakan cek kandungan gizinya di situs web terkait.
 
-            Untuk informasi lebih lanjut tentang kandungan gizi makanan lain, 
+            Untuk informasi lebih lanjut tentang kandungan gizi makanan lain,
             Anda dapat mengunjungi situs-situs seperti USDA FoodData Central atau FatSecret.</p>
     </div>
     <hr class="garis-perhatian">
@@ -303,44 +335,67 @@
             <img src="telur.png" alt="Telur">
         </div>
         <div class="right">
-            <p class="keterangantahu">Tahu mengandung 8 gram protein per 100 gram, dan memiliki kalori yang berbeda tergantung metode cara memasaknya.</p>
+            <p class="keterangantahu">Tahu mengandung 8 gram protein per 100 gram, dan memiliki kalori yang berbeda
+                tergantung metode cara memasaknya.</p>
             <ul class="titik1" type="disc">
                 <li>Tahu rebus mengandung 80 kalori per 100gr</li>
                 <li>Tahu goreng mengandung 200 kalori per 100gr</li>
                 <li>Tahu bakar mengandung 105 kalori per 100gr</li>
             </ul>
-            <input class="tombol1" type="submit" value="Rebus"><input class="tombol1" type="submit" value="Goreng"><input class="tombol1" type="submit" value="Bakar">
-            <p class="keterangantempe">Tempe mengandung 18 gram protein per 100 gram, dan memiliki kalori yang berbeda tergantung metode cara memasaknya.</p>
+            <input class="tombol1" type="submit" value="Rebus"><input class="tombol1" type="submit"
+                value="Goreng"><input class="tombol1" type="submit" value="Bakar">
+            <p class="keterangantempe">Tempe mengandung 18 gram protein per 100 gram, dan memiliki kalori yang berbeda
+                tergantung metode cara memasaknya.</p>
             <ul class="titik2" type="disc">
                 <li>Tempe rebus mengandung 140 kalori per 100gr</li>
                 <li>Tempe goreng mengandung 250 kalori per 100gr</li>
                 <li>Tempe bakar mengandung 170 kalori per 100gr</li>
             </ul>
-            <input class="tombol2" type="submit" value="Rebus"><input class="tombol2" type="submit" value="Goreng"><input class="tombol2" type="submit" value="Bakar">
-            <p class="keteranganayam">Ayam mengandung 31 gram protein per 100 gram, dan memiliki kalori yang berbeda tergantung metode cara memasaknya.</p>
+            <input class="tombol2" type="submit" value="Rebus"><input class="tombol2" type="submit"
+                value="Goreng"><input class="tombol2" type="submit" value="Bakar">
+            <p class="keteranganayam">Ayam mengandung 31 gram protein per 100 gram, dan memiliki kalori yang berbeda
+                tergantung metode cara memasaknya.</p>
             <ul class="titik3" type="disc">
                 <li>Ayam rebus mengandung 165 kalori per 100gr</li>
                 <li>Ayam goreng mengandung 260 kalori per 100gr</li>
                 <li>Ayam bakar mengandung 190 kalori per 100gr</li>
             </ul>
-            <input class="tombol3" type="submit" value="Rebus"><input class="tombol3" type="submit" value="Goreng"><input class="tombol3" type="submit" value="Bakar">
-            <p class="keterangandaging">Daging mengandung 26 gram protein per 100 gram, dan memiliki kalori yang berbeda tergantung metode cara memasaknya.</p>
+            <input class="tombol3" type="submit" value="Rebus"><input class="tombol3" type="submit"
+                value="Goreng"><input class="tombol3" type="submit" value="Bakar">
+            <p class="keterangandaging">Daging mengandung 26 gram protein per 100 gram, dan memiliki kalori yang berbeda
+                tergantung metode cara memasaknya.</p>
             <ul class="titik4" type="disc">
                 <li>Daging rebus mengandung 250 kalori per 100gr</li>
                 <li>Daging goreng mengandung 350 kalori per 100gr</li>
                 <li>Daging bakar mengandung 275 kalori per 100gr</li>
             </ul>
-            <input class="tombol4" type="submit" value="Rebus"><input class="tombol4" type="submit" value="Goreng"><input class="tombol4" type="submit" value="Bakar">
-            <p class="keterangantelur">Telur mengandung 13 gram protein per 100 gram, dan memiliki kalori yang berbeda tergantung metode cara memasaknya.</p>
+            <input class="tombol4" type="submit" value="Rebus"><input class="tombol4" type="submit"
+                value="Goreng"><input class="tombol4" type="submit" value="Bakar">
+            <p class="keterangantelur">Telur mengandung 13 gram protein per 100 gram, dan memiliki kalori yang berbeda
+                tergantung metode cara memasaknya.</p>
             <ul class="titik5" type="disc">
                 <li>Telur rebus mengandung 155 kalori per 100gr</li>
                 <li>Telur goreng mengandung 201 kalori per 100gr</li>
             </ul>
-            <input class="tombol5" type="submit" value="Rebus"><input class="tombol5" type="submit" value="Goreng"><input class="tombol5" type="submit" value="Bakar">
+            <input class="tombol5" type="submit" value="Rebus"><input class="tombol5" type="submit"
+                value="Goreng"><input class="tombol5" type="submit" value="Bakar">
         </div>
     </div>
-<script>
-    
-</script>
+
+    <footer class="text-center py-2" style="background-color: #D9D9D9;">
+        <div class="text-sm"><span class="fw-bold">My Fitness </span>| by The Falcon Team</div>
+        <div class="mt-2 justify-content-center gap-2">
+            <a href="https://www.instagram.com/educom23.ulm/" class="text-decoration-none text-white">
+                <box-icon name='instagram-alt' type='logo'></box-icon>
+            </a>
+            <a href="https://discord.gg/YrKarhSV" class="text-decoration-none text-white">
+                <box-icon name='discord-alt' type='logo'></box-icon>
+            </a>
+            <a href="https://github.com/KizuAnee/Projek-pemweb1-The_Falcon.git" class="text-decoration-none text-white">
+                <box-icon name='github' type='logo'></box-icon>
+            </a>
+        </div>
+    </footer>
 </body>
+
 </html>
