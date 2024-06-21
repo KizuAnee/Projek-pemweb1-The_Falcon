@@ -174,19 +174,14 @@
             font-size: 50px;
         }
 
-        .kolom-kiri .hasil1 {
-            text-align: center;
-            font-size: 80px;
-            font-family: Verdana;
-        }
-
+        
         .total {
             margin: 20px;
             position: relative;
             bottom: 20px;
             font-family: Verdana;
         }
-
+        
         .kolom-kanan-atas {
             grid-column: 2;
             grid-row: 1;
@@ -196,21 +191,21 @@
             box-sizing: border-box;
             border-radius: 25px;
         }
-
+        
         .kolom-kanan-atas h2 {
             color: #FF9900;
         }
-
+        
         .protein {
             font-family: Verdana;
         }
-
+        
         .hasil2 {
             text-align: center;
             font-size: 50px;
             font-family: Verdana;
         }
-
+        
         .kolom-kanan-bawah {
             grid-column: 2;
             grid-row: 2;
@@ -219,18 +214,18 @@
             box-sizing: border-box;
             border-radius: 25px;
         }
-
+        
         .today {
             margin: 15px 20px 10px 20px;
             font-family: Verdana;
         }
-
+        
         .garis-kalkulator-kanan {
             background-color: white;
             height: 5px;
             opacity: 100%;
         }
-
+        
         .max {
             color: #FF9900;
             margin: 15px 20px 10px 20px;
@@ -238,19 +233,19 @@
             top: 1px;
             font-family: Verdana;
         }
-
+        
         .hasil-today {
             text-align: center;
             font-size: 50px;
             font-family: Verdana;
         }
-
+        
         .hasil-max {
             text-align: center;
             font-size: 50px;
             font-family: Verdana;
         }
-
+        
         footer {
             background-color: gray;
         }
@@ -260,14 +255,44 @@
             font-size: 24px;
             font-weight: 300;
         }
-
+        
         .btn {
             border: none;
             border-radius: 25px;
             background-color: #FFBE5C;
         }
         
-    </style>
+        #demo {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        #demo span {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        
+        
+        #demo1 {
+            text-align: center;
+            font-size: 80px;
+            font-weight: bold;
+            font-family: Verdana;
+        }
+
+        #demo2 {
+            text-align: center;
+            font-size: 80px;
+            font-weight: bold;
+            font-family: Verdana;
+        }
+        
+        
+        </style>
 </head>
 
 <body>
@@ -299,21 +324,21 @@
     <div>
         <div class="kalkulator text-white">
             <div class="kolom-kiri">
-                <h1 class="jumlahan"><b>255 + 255 + 255 + 255 + 255 + 255 + 255 + 255 + 255 </b></h1><br>
+                <h1 id="demo"></h1><br>
                 <hr class="garis-kalkulator-kiri">
                 <h3 class="total"><b>TOTAL</b></h3>
-                <h1 class="hasil1"><b>1330 kcal</b></h1>
+                <h1 id="demo1">0 kcal</h1>
             </div>
             <div class="kolom-kanan-atas">
                 <h2 class="protein"><b>PROTEIN</b></h2><br>
-                <h1 class="hasil2"><b>1330 kcal</b></h1>
+                <h1 id="demo2"><b>0 gram</b></h1>
             </div>
             <div class="kolom-kanan-bawah">
                 <h2 class="today"><b>TODAY</b></h2>
-                <h1 class="hasil-today"><b>1330 kcal</b></h1>
+                <h1 class="hasil-today"><b>0 kcal</b></h1>
                 <hr class="garis-kalkulator-kanan">
                 <h2 class="max"><b>MAX</b></h2>
-                <h1 class="hasil-max"><b>390 kcal</b></h1>
+                <h1 class="hasil-max"><b>0 kcal</b></h1>
             </div>
         </div>
     </div>
@@ -335,50 +360,50 @@
             <img src="telur.png" alt="Telur">
         </div>
         <div class="right">
-            <p class="keterangantahu">Tahu mengandung 8 gram protein per 100 gram, dan memiliki kalori yang berbeda
+            <p class="keterangantahu">Tahu mengandung 8 gram protein per 100 gram (3-4 potong), dan memiliki kalori yang berbeda
                 tergantung metode cara memasaknya.</p>
             <ul class="titik1" type="disc">
                 <li>Tahu rebus mengandung 80 kalori per 100gr</li>
                 <li>Tahu goreng mengandung 200 kalori per 100gr</li>
                 <li>Tahu bakar mengandung 105 kalori per 100gr</li>
             </ul>
-            <input class="tombol1" type="submit" value="Rebus"><input class="tombol1" type="submit"
-                value="Goreng"><input class="tombol1" type="submit" value="Bakar">
-            <p class="keterangantempe">Tempe mengandung 18 gram protein per 100 gram, dan memiliki kalori yang berbeda
+            <input class="tombol1" type="submit" value="Rebus" onclick= "myFunction('tahurebus')"><input class="tombol1" type="submit" value="Goreng" onclick= "myFunction('tahugoreng')"><input class="tombol1" type="submit" value="Bakar" onclick= "myFunction('tahubakar')">
+
+
+            <p class="keterangantempe">Tempe mengandung 18 gram protein per 100 gram (2 potong), dan memiliki kalori yang berbeda
                 tergantung metode cara memasaknya.</p>
             <ul class="titik2" type="disc">
                 <li>Tempe rebus mengandung 140 kalori per 100gr</li>
                 <li>Tempe goreng mengandung 250 kalori per 100gr</li>
                 <li>Tempe bakar mengandung 170 kalori per 100gr</li>
             </ul>
-            <input class="tombol2" type="submit" value="Rebus"><input class="tombol2" type="submit"
-                value="Goreng"><input class="tombol2" type="submit" value="Bakar">
-            <p class="keteranganayam">Ayam mengandung 31 gram protein per 100 gram, dan memiliki kalori yang berbeda
+            <input class="tombol2" type="submit" value="Rebus" onclick= "myFunction('temperebus')"><input class="tombol2" type="submit"value="Goreng" onclick= "myFunction('tempegoreng')"><input class="tombol2" type="submit" value="Bakar" onclick= "myFunction('tempebakar')">
+
+            <p class="keteranganayam">Ayam mengandung 31 gram protein per 100 gram (4-5 potong), dan memiliki kalori yang berbeda
                 tergantung metode cara memasaknya.</p>
             <ul class="titik3" type="disc">
                 <li>Ayam rebus mengandung 165 kalori per 100gr</li>
                 <li>Ayam goreng mengandung 260 kalori per 100gr</li>
                 <li>Ayam bakar mengandung 190 kalori per 100gr</li>
             </ul>
-            <input class="tombol3" type="submit" value="Rebus"><input class="tombol3" type="submit"
-                value="Goreng"><input class="tombol3" type="submit" value="Bakar">
-            <p class="keterangandaging">Daging mengandung 26 gram protein per 100 gram, dan memiliki kalori yang berbeda
+            <input class="tombol3" type="submit" value="Rebus" onclick= "myFunction('ayamrebus')"><input class="tombol3" type="submit" value="Goreng" onclick= "myFunction('ayamgoreng')"><input class="tombol3" type="submit" value="Bakar" onclick= "myFunction('ayambakar')">
+
+            <p class="keterangandaging">Daging mengandung 26 gram protein per 100 gram (3-4 potong), dan memiliki kalori yang berbeda
                 tergantung metode cara memasaknya.</p>
             <ul class="titik4" type="disc">
                 <li>Daging rebus mengandung 250 kalori per 100gr</li>
                 <li>Daging goreng mengandung 350 kalori per 100gr</li>
                 <li>Daging bakar mengandung 275 kalori per 100gr</li>
             </ul>
-            <input class="tombol4" type="submit" value="Rebus"><input class="tombol4" type="submit"
-                value="Goreng"><input class="tombol4" type="submit" value="Bakar">
-            <p class="keterangantelur">Telur mengandung 13 gram protein per 100 gram, dan memiliki kalori yang berbeda
+            <input class="tombol4" type="submit" value="Rebus" onclick= "myFunction('dagingrebus')"><input class="tombol4" type="submit" value="Goreng" onclick= "myFunction('daginggoreng')"><input class="tombol4" type="submit" value="Bakar" onclick= "myFunction('dagingbakar')">
+
+            <p class="keterangantelur">Telur mengandung 13 gram protein per 100 gram (2 potong), dan memiliki kalori yang berbeda
                 tergantung metode cara memasaknya.</p>
             <ul class="titik5" type="disc">
                 <li>Telur rebus mengandung 155 kalori per 100gr</li>
                 <li>Telur goreng mengandung 201 kalori per 100gr</li>
             </ul>
-            <input class="tombol5" type="submit" value="Rebus"><input class="tombol5" type="submit"
-                value="Goreng"><input class="tombol5" type="submit" value="Bakar">
+            <input class="tombol5" type="button" value="rebus" onclick= "myFunction('telurrebus')"><input class="tombol5" type="submit" value="Goreng" onclick= "myFunction('telurgoreng')">
         </div>
     </div>
 
@@ -397,5 +422,154 @@
         </div>
     </footer>
 </body>
+
+<script>
+    let hasil = 0;
+    let proteintotal = 0;
+
+    function myFunction(type) {
+        let kalori = 0;
+        let protein = 0;
+            // Bagian tahu
+            const tahurebus = 80;
+            const tahugoreng = 200;
+            const tahubakar = 105;
+            const proteintahu = 8;
+
+            // Bagian tempe
+            const temperebus = 140;
+            const tempegoreng = 250;
+            const tempebakar = 170;
+            const proteintempe = 18;
+
+            // Bagian ayam
+            const ayamrebus = 165;
+            const ayamgoreng = 260;
+            const ayambakar = 190;
+            const proteinayam = 31;
+
+            // Bagian daging
+            const dagingrebus = 250;
+            const daginggoreng = 350;
+            const dagingbakar = 275;
+            const proteindaging = 26;
+
+
+            // Bagian telur
+            const telurrebus = 155;
+            const telurgoreng = 201;
+            const proteintelur = 13;
+
+
+            // bagian tahu
+            if (type === 'tahurebus') {
+                kalori = tahurebus;
+                protein = proteintahu;
+
+            }
+
+            else if (type === 'tahugoreng') {
+                kalori = tahugoreng;
+                protein = proteintahu;
+
+            } 
+
+            else if (type === 'tahubakar') {
+                kalori = tahubakar;
+                protein = proteintahu;
+
+            } 
+
+
+            // bagian tempe
+            if (type === 'temperebus') {
+                kalori = temperebus;
+                protein = proteintempe;
+
+            }
+
+            else if (type === 'tempegoreng') {
+                kalori = tempegoreng;
+                protein = proteintempe;
+
+            } 
+
+            else if (type === 'tempebakar') {
+                kalori = tempebakar;
+                protein = proteintempe;
+
+            } 
+
+
+            // bagian ayam
+            if (type === 'ayamrebus') {
+                kalori = ayamrebus;
+                protein = proteinayam;
+
+            }
+
+            else if (type === 'ayamgoreng') {
+                kalori = ayamgoreng;
+                protein = proteinayam;
+
+            } 
+
+            else if (type === 'ayambakar') {
+                kalori = ayambakar;
+                protein = proteinayam;
+
+            } 
+
+
+            // bagian daging
+            if (type === 'dagingrebus') {
+                kalori = dagingrebus;
+                protein = proteindaging;
+
+            }
+
+            else if (type === 'daginggoreng') {
+                kalori = daginggoreng;
+                protein = proteindaging;
+
+            } 
+
+            else if (type === 'dagingbakar') {
+                kalori = dagingbakar;
+                protein = proteindaging;
+
+            } 
+
+
+            // bagian telur 
+            else if (type === 'telurrebus') {
+                kalori = telurrebus;
+                protein = proteintelur;
+            }
+
+            else if (type === 'telurgoreng') {
+                kalori = telurgoreng;
+                protein = proteintelur;
+            }
+
+            const numberContainer = document.getElementById("demo");
+
+            const newSpan = document.createElement('span');
+            newSpan.textContent = kalori;
+            numberContainer.appendChild(newSpan);
+
+            const plusSpan = document.createElement('span');
+            plusSpan.textContent = '+';
+            numberContainer.appendChild(plusSpan);
+
+            hasil += kalori;
+            proteintotal += protein;
+
+            document.getElementById("demo1").textContent = hasil + " Kcal";
+            document.getElementById("demo2").textContent = proteintotal + " gram";
+        }
+
+    
+</script>
 
 </html>
