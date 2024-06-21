@@ -133,20 +133,13 @@
 
         .kalkulator {
             display: grid;
+            color: white;
             background-color: #232222;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             height: 650px;
             gap: 50px;
             padding: 50px;
-        }
-
-        .garis-kalkulator-kiri {
-            background-color: white;
-            height: 5px;
-            opacity: 100%;
-            position: relative;
-            bottom: 15px;
         }
 
         .kolom-kiri {
@@ -160,11 +153,17 @@
             margin: 15px 20px 10px 20px;
             line-height: 60px;
             text-align: justify;
+            height: 200px;
         }
 
-        .kolom-kiri hr {
+
+        .kolom-kiri .garis-kalkulator-kiri {
             background-color: white;
+            opacity: 100%;
+            height: 5px;
+            margin: 50px 0px;
         }
+
 
         .kolom-kiri h3 {
             color: #FF9900;
@@ -234,7 +233,7 @@
             font-family: Verdana;
         }
         
-        .hasil-today {
+        #demo3 {
             text-align: center;
             font-size: 50px;
             font-family: Verdana;
@@ -265,13 +264,13 @@
         #demo {
             display: flex;
             flex-direction: row;
-            justify-content: center;
-            align-items: center;
+            justify-content: left;
+            align-items: baseline;
             flex-wrap: wrap;
         }
         
         #demo span {
-            font-size: 24px;
+            font-size: 30px;
             font-weight: bold;
             margin: 0 10px;
         }
@@ -287,6 +286,20 @@
         #demo2 {
             text-align: center;
             font-size: 80px;
+            font-weight: bold;
+            font-family: Verdana;
+        }
+
+        #demo3 {
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            font-family: Verdana;
+        }
+
+        #demo4 {
+            text-align: center;
+            font-size: 50px;
             font-weight: bold;
             font-family: Verdana;
         }
@@ -322,7 +335,7 @@
         </div>
     </nav>
     <div>
-        <div class="kalkulator text-white">
+        <div class="kalkulator">
             <div class="kolom-kiri">
                 <h1 id="demo"></h1><br>
                 <hr class="garis-kalkulator-kiri">
@@ -335,10 +348,10 @@
             </div>
             <div class="kolom-kanan-bawah">
                 <h2 class="today"><b>TODAY</b></h2>
-                <h1 class="hasil-today"><b>0 kcal</b></h1>
+                <h1 id="demo3"><b>0 kcal</b></h1>
                 <hr class="garis-kalkulator-kanan">
                 <h2 class="max"><b>MAX</b></h2>
-                <h1 class="hasil-max"><b>0 kcal</b></h1>
+                <h1 id="demo4"><b>0 kcal</b></h1>
             </div>
         </div>
     </div>
@@ -567,6 +580,8 @@
 
             document.getElementById("demo1").textContent = hasil + " Kcal";
             document.getElementById("demo2").textContent = proteintotal + " gram";
+            document.getElementById("demo3").innerHTML = hasil + " Kcal";
+
         }
 
     
