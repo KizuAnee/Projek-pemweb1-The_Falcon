@@ -10,8 +10,17 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <style>
+    .login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f8f9fa;
+    }
+    
     .card {
       background-color: #393939;
+      border-radius: 1rem;
     }
 
     .form-label {
@@ -25,11 +34,11 @@
 </head>
 
 <body>
-  <section class="vh-100">
-    <div class="container py-5 h-100">
-      <div class="row d-flex  align-items-center h-100">
+  <section class="login">
+    <div class="container">
+      <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-          <div class="card text-white" style="border-radius: 1rem;">
+          <div class="card text-white">
             <div class="card-body p-5 text-center">
 
               <div class="mb-md-5 mt-md-4">
@@ -38,24 +47,22 @@
                 <p class="text-white-50">Please enter your login and password!</p>
 
                 <label class="form-label" for="typeEmailX">Email</label>
-                <div data-mdb-input-init class="form-outline mb-4">
+                <div class="form-outline mb-4">
                   <input type="email" id="typeEmailX" class="form-control form-control-lg" />
                 </div>
 
                 <label class="form-label" for="typePasswordX">Password</label>
-                <div data-mdb-input-init class="form-outline mb-2">
+                <div class="form-outline mb-2">
                   <input type="password" id="typePasswordX" class="form-control form-control-lg" />
                 </div>
 
                 <div class="d-flex justify-content-between pb-lg-2 mb-4">
-                  <p class="small d-flex pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+                  <p class="small"><a class="text-white-50" href="#!">Forgot password?</a></p>
                   <a href="#" class="mb-0 ms-auto text-white-50">Sign Up</a>
-                  </p>
                 </div>
 
                 <div class="text-end">
-                  <button data-mdb-button-init data-mdb-ripple-init
-                    class="btn btn-outline-light flex-row-reverse btn-lg px-5" type="submit">confirm</button>
+                  <button class="btn btn-outline-light flex-row-reverse btn-lg px-5" type="submit">Confirm</button>
                 </div>
               </div>
             </div>
