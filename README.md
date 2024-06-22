@@ -6,6 +6,6 @@ Repo Projek PEMWEB
 - Akhmad Fitriannor
 - Muhammad Farros Shofiy
   
-Project start : Mey 2024
+Project start : May 2024
 
 Lambung Mangkurat University, Computer Sience Edu.
