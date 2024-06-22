@@ -105,6 +105,9 @@
       background-color: transparent;
     }
     /* signup */
+    .input-text-validation{
+      text-align: left;
+    }
     .sign-up{
       display: flex;
       justify-content: center;
@@ -145,7 +148,7 @@
             </li>
           </ul>
           <div class="d-flex ms-5">
-            <button type="button" class="btn px-4 btn-light fw-bold" data-bs-toggle="modal" data-bs-target="#loginModal">SIGN UP</button>
+            <button type="button" class="btn px-4 btn-light fw-bold" data-bs-toggle="modal" data-bs-target="#SignUpModal">SIGN UP</button>
           </div>
         </div>
       </div>
@@ -156,7 +159,7 @@
   <!-- first -->
   <div class="container-fluid p-5 content1">
     <h1 class="text-container1 text-white fw-light m-5">TURN YOUR <br>EMOTION <br>INTO <span class="text-warning">POWER</span></h1>
-    <button type="button" class="btn px-5 py-3 btn-light fw-bold mx-5" data-bs-toggle="modal" data-bs-target="#loginModal">GET STARTED</button>
+    <button type="button" class="btn px-5 py-3 btn-light fw-bold mx-5" data-bs-toggle="modal" data-bs-target="#SignUpModal">GET STARTED</button>
   </div>
 
   <!-- second -->
@@ -191,21 +194,26 @@
       <div class="modal-content">
         <div class="modal-body">
           <!-- Login Form -->
-          <div class="card text-white">
+          <div class="card text-white was-validated">
             <div class="card-body p-5 text-center">
 
               <div class="mb-md-5 mt-md-4">
+
                 <h2 class="fw-bold mb-2">Log In</h2>
                 <p class="text-white-50">Please enter your login and password!</p>
 
-                <label class="form-label" for="typeEmailX">Email</label>
-                <div class="form-outline mb-4">
-                  <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                <label for="email" class="form-label">Email</label>
+                <div class="input-text-validation form-outline mb-3">
+                  <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
-
-                <label class="form-label" for="typePasswordX">Password</label>
-                <div class="form-outline mb-2">
-                  <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+  
+                <label for="pwd" class="form-label">Password</label>
+                <div class="input-text-validation form-outline mb-3">
+                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
 
                 <div class="d-flex justify-content-between pb-lg-2 mb-4">
@@ -231,26 +239,32 @@
       <div class="modal-content">
         <div class="modal-body">
 
-          <div class="card text-white" style="border-radius: 1rem;">
+          <div class="card text-white was-validated" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
 
               <div class="mb-md-5 mt-md-4">
 
-                <h2 class="fw-bold mb-4">Create An Account</h2>
+                <h2 class="fw-bold mb-3">Create An Account</h2>
 
-                <label class="form-label" for="typeEmailX">Email</label>
-                <div class="form-outline mb-4">
-                  <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                <label for="email" class="form-label">Email</label>
+                <div class="input-text-validation form-outline mb-3">
+                  <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
 
-                <label class="form-label" for="typePasswordX">Password</label>
-                <div class="form-outline mb-4">
-                  <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                <label for="pwd" class="form-label">Password</label>
+                <div class="input-text-validation form-outline mb-3">
+                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
 
-                <label class="form-label" for="typeConfirmPasswordX">Confirm Password</label>
-                <div class="form-outline mb-2">
-                  <input type="password" id="typeConfirmPasswordX" class="form-control form-control-lg" />
+                <label for="pwd" class="form-label">Confirm Password</label>
+                <div class="input-text-validation form-outline mb-3">
+                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
 
                 <div class="d-flex justify-content-between pb-lg-2 mb-4">
