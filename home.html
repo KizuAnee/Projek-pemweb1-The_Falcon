@@ -44,16 +44,43 @@
         }
 
         .small-container2 {
-            /* background-color: lightcoral; */
             height: 275px;
             border-radius: 10px;
+            position: relative;
+            overflow: hidden;
         }
 
         .gradient-bg {
-            background: linear-gradient(90deg, #0D0D0D, rgba(115, 115, 115, 0));
+            background: linear-gradient(90deg, rgba(13, 13, 13, 0.8), rgba(115, 115, 115, 0.3));
             border-radius: 10px;
-            padding: 130px 25px 31px 0;
-            height: 275px;
+            height: 100%;
+            width: 110%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .background-image {
+            position: absolute;
+            margin-left: 12px;
+            top: 0;
+            left: 0;
+            width: 900px;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding: 20px;
         }
     </style>
 </head>
@@ -140,31 +167,28 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-5 small-container2 mb-4 mx-5">
-                        <div class="container gradient-bg">
-                            <div class="row">
-                                <div class="col">
-                                    <a class="nav-link active text-light fw-bold" aria-current="page" href="#">
-                                        <h2>KALKULATOR<br>KALORI</h2>
-                                    </a>
-                                </div>
-                                <div class="col text-right">
-                                    <img class="img-fluid" src="../assets/vectors/Unknown" alt="Vector">
-                                </div>
+                    <div class="col-md-5 small-container2 mb-4 mx-5 position-relative">
+                        <div class="background-image"
+                            style="background-image: url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                        </div>
+                        <div class="gradient-bg">
+                            <div class="content">
+                                <a class="nav-link active text-light fw-bold" aria-current="page" href="#">
+                                    <h2>KALKULATOR<br>KALORI</h2>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5 small-container2 mb-4 mx-4">
-                        <div class="container gradient-bg">
-                            <div class="row">
-                                <div class="col">
-                                    <a class="nav-link active text-light fw-bold" aria-current="page" href="#">
-                                        <h2>LATIHAN</h2>
-                                    </a>
-                                </div>
-                                <div class="col text-right">
-                                    <img class="img-fluid" src="../assets/vectors/Unknown" alt="Vector">
-                                </div>
+
+                    <div class="col-md-5 small-container2 mb-4 mx-4 position-relative">
+                        <div class="background-image"
+                            style="background-image: url('https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                        </div>
+                        <div class="gradient-bg">
+                            <div class="content">
+                                <a class="nav-link active text-light fw-bold" aria-current="page" href="#">
+                                    <h2>LATIHAN</h2>
+                                </a>
                             </div>
                         </div>
                     </div>
