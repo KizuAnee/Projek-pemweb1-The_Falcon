@@ -136,29 +136,10 @@
                             <p>Data diambil dari input data saat membuat akun, dan perhitungan dari latihan yang
                                 dilakukan</p>
                             <div class="d-flex align-items-center mb-3">
-                                <h3 class="mr-3">NORMAL</h3>
-                                <span>*</span>
+                                <div id="bmiStatus"></div>
                             </div>
                             <div id="userData">
                                 <!-- User data will be inserted here -->
-                            </div>
-                            <div class="my-4">
-                                <div class="d-flex justify-content-between">
-                                    <div style="width: 100px; height: 16px; background-color: #53BCE9;"></div>
-                                    <div style="width: 100px; height: 16px; background-color: #67C9A0;"></div>
-                                    <div style="width: 100px; height: 16px; background-color: #F5E764;"></div>
-                                    <div style="width: 100px; height: 16px; background-color: #FBB03B;"></div>
-                                    <div style="width: 100px; height: 16px; background-color: #F47B50;"></div>
-                                    <div style="width: 100px; height: 16px; background-color: #D35B64;"></div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <span>underweight</span>
-                                    <span>normal</span>
-                                    <span>overweight</span>
-                                    <span>severe obesity</span>
-                                    <span>morbid obesity</span>
-                                    <span>super obesity</span>
-                                </div>
                             </div>
                             <p>*skor didapat sesuai kalkulator Body Mass Index (BMI)</p>
                         </div>
@@ -213,19 +194,42 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-          const userData = JSON.parse(sessionStorage.getItem('userData'));
-          if (userData) {
-            const userDataDiv = document.getElementById('userData');
-            userDataDiv.innerHTML = `
-              tinggi: ${userData.height} cm<br>
-              berat: ${userData.weight} kg<br>
-              umur: ${userData.age} tahun
-            `;
-          } else {
-            alert('No user data found. Please go back and fill out the form.');
-          }
+            const userData = JSON.parse(sessionStorage.getItem('userData'));
+            if (userData) {
+                const userDataDiv = document.getElementById('userData');
+                userDataDiv.innerHTML = `
+          tinggi: ${userData.height} cm<br>
+          berat: ${userData.weight} kg<br>
+          umur: ${userData.age} tahun
+        `;
+
+                // Calculate BMI
+                const heightInMeters = userData.height / 100;
+                const bmi = userData.weight / (heightInMeters * heightInMeters);
+
+                // Determine BMI status
+                let bmiStatus = '';
+                if (bmi < 18.5) {
+                    bmiStatus = 'Underweight';
+                } else if (bmi >= 18.5 && bmi < 25) {
+                    bmiStatus = 'Normal Weight';
+                } else if (bmi >= 25 && bmi < 30) {
+                    bmiStatus = 'Overweight';
+                } else if (bmi >= 30 && bmi < 35) {
+                    bmiStatus = 'Obesity Class I (Moderate)';
+                } else if (bmi >= 35 && bmi < 40) {
+                    bmiStatus = 'Obesity Class II (Severe)';
+                } else if (bmi >= 40) {
+                    bmiStatus = 'Obesity Class III (Very Severe)';
+                }
+
+                const bmiStatusDiv = document.getElementById('bmiStatus');
+                bmiStatusDiv.innerHTML = `<strong>Status BMI:</strong> ${bmiStatus}`;
+            } else {
+                alert('No user data found. Please go back and fill out the form.');
+            }
         });
-      </script>
+    </script>
 </body>
 
 </html>
