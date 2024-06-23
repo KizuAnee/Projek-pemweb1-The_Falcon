@@ -5,8 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DATA</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
   <style>
     .card {
       background-color: #1D3E51;
@@ -15,14 +18,13 @@
     .form-label {
       display: flex;
     }
-    
-/* Atur lebar maksimal untuk input form */
+
     .form-control-lg {
       width: 100%;
-      max-width: 85px; 
+      max-width: 85px;
     }
 
-    #passwordInput{
+    #passwordInput {
       width: 100%;
       max-width: 471px;
     }
@@ -46,57 +48,38 @@
             <div class="card-body p-5 text-center">
               <div class="mb-md-5 mt-md-4 form-section">
                 <h2 class="fw-bold mb-2 text-center">Complete your personal details</h2>
-                <p class="text-white-50 text-center">The data you fill in will be our benchmark in creating appropriate exercises!</p>
-                
-                <!-- umur -->
+                <p class="text-white-50 text-center">The data you fill in will be our benchmark in creating appropriate
+                  exercises!</p>
+
                 <label class="form-label" for="ageInput">Age</label>
                 <div class="form-outline form-white mb-4">
                   <input type="number" id="ageInput" class="form-control form-control-lg" />
                 </div>
 
-                <!-- berat -->
                 <label class="form-label" for="weightInput">Body Weight</label>
                 <div class="form-outline form-white mb-4">
                   <input type="number" id="weightInput" class="form-control form-control-lg" />
                 </div>
 
-                <!-- tinggi -->
                 <label class="form-label" for="heightInput">Height</label>
                 <div class="form-outline form-white mb-4">
                   <input type="number" id="heightInput" class="form-control form-control-lg" />
                 </div>
 
-                <!-- kelamin -->
                 <div class="col-md-6 mb-4">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gender" id="maleGender" value="male" />
-                    <label class="form-check-label" for="maleGender">Male</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="female" checked />
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
+                      value="female" />
                     <label class="form-check-label" for="femaleGender">Female</label>
                   </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+                      value="male" />
+                    <label class="form-check-label" for="maleGender">Male</label>
+                  </div>
                 </div>
 
-                <!-- pilihan latihan -->
-                <p class="text-white-75">Which exercise program do you want to start?</p>
-                <div class="mb-4 d-flex gap-2">
-                  <button type="button" class="btn btn-outline-light btn-lg">Bulking</button>
-                  <p class="my-auto">or</p>
-                  <button type="button" class="btn btn-outline-light btn-lg">Cutting</button>
-                </div>
-
-                <!-- confirm pass -->
-                <p class="text-white-75">Before confirming, type your password</p>
-                <div class="form-outline mb-4">
-                  <input type="password" id="passwordInput" class="form-control form-control-lg" />
-                </div>
-
-                <p class="text-white-55 text-center">By clicking <b>confirm</b>, you agree to our <b>User Agreement, Privacy Policy, and Cookie Policy</b></p>
-
-                <div class="text-end">
-                  <button class="btn btn-outline-light flex-row-reverse btn-lg px-5" type="submit">Confirm</button>
-                </div>
+                <button class="btn btn-outline-light btn-lg px-5" type="button" onclick="saveData()">Save Data</button>
 
               </div>
             </div>
@@ -105,6 +88,56 @@
       </div>
     </div>
   </section>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCw0JQnVmwhXC_HrPk1lXja3iNs5tDA1Mk",
+      authDomain: "projek-pemweb-538e2.firebaseapp.com",
+      databaseURL: "https://projek-pemweb-538e2-default-rtdb.firebaseio.com",
+      projectId: "projek-pemweb-538e2",
+      storageBucket: "projek-pemweb-538e2.appspot.com",
+      messagingSenderId: "938803551824",
+      appId: "1:938803551824:web:43b89766ae169579527b55",
+      measurementId: "G-Z4P78BMM2X"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    window.saveData = async function () {
+      const username = sessionStorage.getItem('username');
+      const age = document.getElementById('ageInput').value;
+      const weight = document.getElementById('weightInput').value;
+      const height = document.getElementById('heightInput').value;
+      const gender = document.querySelector('input[name="inlineRadioOptions"]:checked').value;
+
+      if (!age || !weight || !height || !gender) {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      try {
+        const db = getDatabase(app);
+        const userRef = ref(db, 'users/' + username.replace(/[.$\[\]#\/]/g, ',') + '/data');
+        await set(userRef, {
+          age: age,
+          weight: weight,
+          height: height,
+          gender: gender
+        });
+
+        alert('Data saved successfully');
+        window.location.href = 'login.html';
+      } catch (error) {
+        alert('Error saving data: ' + error.message);
+      }
+    }
+  </script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -10,16 +10,19 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <style>
-    .login {
+    .input-text-validation {
+      text-align: left;
+    }
+
+    .sign-up {
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
     }
-    
+
     .card {
       background-color: #393939;
-      border-radius: 1rem;
     }
 
     .form-label {
@@ -29,47 +32,43 @@
     a {
       text-decoration: none;
     }
-    .input-text-validation{
-      text-align: left;
-    }
   </style>
 </head>
 
 <body>
-  <section class="login">
+  <section class="vh-100 sign-up">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-          <div class="card text-white was-validated">
+          <div class="card text-white was-validated" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
-
               <div class="mb-md-5 mt-md-4">
+                <h2 class="fw-bold mb-3">Login to Your Account</h2>
 
-                <h2 class="fw-bold mb-2">Log In</h2>
-                <p class="text-white-50">Please enter your login and password!</p>
-
-                <label for="email" class="form-label">Email</label>
+                <label for="username" class="form-label">username</label>
                 <div class="input-text-validation form-outline mb-3">
-                  <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                  <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required>
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
-  
+
                 <label for="pwd" class="form-label">Password</label>
                 <div class="input-text-validation form-outline mb-3">
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd"
+                    required>
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
-  
 
-                <div class="d-flex justify-content-between pb-lg-2 mb-4">
-                  <p class="small"><a class="text-white-50" href="#!">Forgot password?</a></p>
-                  <a href="sign_up.html" class="mb-0 ms-auto text-white-50">Sign Up</a>
+                <div class="d-flex justify-content-between pb-lg-2 mb-3">
+                  <p class="mb-0 ms-auto">Don't have an account? <a href="signup.html" class="text-white-50">Sign up</a>
+                  </p>
                 </div>
 
                 <div class="text-end">
-                  <button class="btn btn-outline-light flex-row-reverse btn-lg px-5" type="submit">Confirm</button>
+                  <button data-mdb-button-init data-mdb-ripple-init
+                    class="btn btn-outline-light flex-row-reverse btn-lg px-5" type="button"
+                    onclick="login()">Login</button>
                 </div>
               </div>
             </div>
@@ -78,6 +77,48 @@
       </div>
     </div>
   </section>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+    import { getDatabase, ref, get, child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCw0JQnVmwhXC_HrPk1lXja3iNs5tDA1Mk",
+      authDomain: "projek-pemweb-538e2.firebaseapp.com",
+      databaseURL: "https://projek-pemweb-538e2-default-rtdb.firebaseio.com",
+      projectId: "projek-pemweb-538e2",
+      storageBucket: "projek-pemweb-538e2.appspot.com",
+      messagingSenderId: "938803551824",
+      appId: "1:938803551824:web:43b89766ae169579527b55",
+      measurementId: "G-Z4P78BMM2X"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    window.login = async function () {
+      let username = document.getElementById('username').value;
+      let password = document.getElementById('pwd').value;
+
+      try {
+        const db = getDatabase(app);
+        const dbRef = ref(db);
+        const snapshot = await get(child(dbRef, `users/${username.replace(/[.$\[\]#\/]/g, ',')}`));
+
+        if (snapshot.exists() && snapshot.val().password === password) {
+          sessionStorage.setItem('username', username);
+          alert('Login successful');
+          window.location.href = 'landing_page.html';
+        } else {
+          alert('Invalid username or password');
+        }
+      } catch (error) {
+        alert('Login failed: ' + error.message);
+      }
+    }
+  </script>
 </body>
 
 </html>

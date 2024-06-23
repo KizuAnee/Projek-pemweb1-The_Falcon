@@ -16,10 +16,12 @@
     * {
       margin: 0;
     }
-    #navbar{
+
+    #navbar {
       position: sticky;
       top: 0;
     }
+
     /* button */
     .btn {
       border-radius: 25px;
@@ -58,6 +60,7 @@
       text-align: right;
       min-height: 731px;
     }
+
     /* content card -> content3 */
     .content-card {
       display: flex;
@@ -81,6 +84,7 @@
       font-size: 24px;
       font-weight: lighter;
     }
+
     /* login */
     .login {
       display: flex;
@@ -88,7 +92,7 @@
       align-items: center;
       min-height: 100vh;
     }
-    
+
     .card {
       background-color: #393939;
       border-radius: 1rem;
@@ -101,19 +105,23 @@
     a {
       text-decoration: none;
     }
-    .modal-content{
+
+    .modal-content {
       background-color: transparent;
     }
+
     /* signup */
-    .input-text-validation{
+    .input-text-validation {
       text-align: left;
     }
-    .sign-up{
+
+    .sign-up {
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;    
+      min-height: 100vh;
     }
+
     .card {
       background-color: #393939;
     }
@@ -122,12 +130,21 @@
       display: flex;
     }
 
+    /* loggin  adn loggout header */
+    .logged-in-header {
+      display: none;
+    }
+
+    .logged-out-header {
+      display: none;
+    }
   </style>
 </head>
 
 <body>
   <!-- navbar -->
-  <div id="navbar">
+  <!-- loggout -->
+  <div id="navbar" class="logged-out-header">
     <nav class="navbar navbar-expand-lg bg-black">
       <div class="container-fluid p-2">
         <a class="navbar-brand text-light ms-5" href="first_page.html">My Fitness</a>
@@ -148,7 +165,37 @@
             </li>
           </ul>
           <div class="d-flex ms-5">
-            <button type="button" class="btn px-4 btn-light fw-bold" data-bs-toggle="modal" data-bs-target="#SignUpModal">SIGN UP</button>
+            <button type="button" class="btn px-4 btn-light fw-bold" data-bs-toggle="modal"
+              data-bs-target="#SignUpModal">SIGN UP</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- login -->
+  <div id="navbar" class="logged-in-header">
+    <nav class="navbar navbar-expand-lg bg-black">
+      <div class="container-fluid p-2">
+        <a class="navbar-brand text-light ms-5" href="landing_page.html">My Fitness</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+          aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon bg-light"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item mx-5">
+              <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Progresku</a>
+            </li>
+            <li class="nav-item mx-5">
+              <a class="nav-link active text-light fw-bold" aria-current="page" href="tentang.html">Tentang</a>
+            </li>
+            <li class="nav-item mx-5">
+              <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Bantuan</a>
+            </li>
+          </ul>
+          <div class="d-flex ms-5">
+            <box-icon name='user-circle' type='solid' color='#ffffff' style="width: 65px; height: 36px;"></box-icon>
           </div>
         </div>
       </div>
@@ -158,8 +205,10 @@
   <!-- content -->
   <!-- first -->
   <div class="container-fluid p-5 content1">
-    <h1 class="text-container1 text-white fw-light m-5">TURN YOUR <br>EMOTION <br>INTO <span class="text-warning">POWER</span></h1>
-    <button type="button" class="btn px-5 py-3 btn-light fw-bold mx-5" data-bs-toggle="modal" data-bs-target="#SignUpModal">GET STARTED</button>
+    <h1 class="text-container1 text-white fw-light m-5">TURN YOUR <br>EMOTION <br>INTO <span
+        class="text-warning">POWER</span></h1>
+    <button type="button" class="btn px-5 py-3 btn-light fw-bold mx-5" data-bs-toggle="modal"
+      data-bs-target="#SignUpModal">GET STARTED</button>
   </div>
 
   <!-- second -->
@@ -170,18 +219,21 @@
 
   <!-- third -->
   <div class="container-fluid p-5 bg-black text-white content3 align-item-center">
-    <h1 style="font-weight: lighter; text-align: center; margin-bottom: 41px; margin-top: 78px;">PILIH PROGRAM YANG SESUAI</h1>
+    <h1 style="font-weight: lighter; text-align: center; margin-bottom: 41px; margin-top: 78px;">PILIH PROGRAM YANG
+      SESUAI</h1>
     <div class="content-card">
       <!-- card 1 content -->
       <div class="card1">
-        <img src="Gambar_LandingPage/cutting_content3.png" alt="cutting" width="378" min-height="287" class="pb-lg-2 mb-4 img-fluid">
+        <img src="Gambar_LandingPage/cutting_content3.png" alt="cutting" width="378" min-height="287"
+          class="pb-lg-2 mb-4 img-fluid">
         <h2>CUTTING</h2>
         <p>Menurunkan lemak dan meningkatkan massa otot</p>
       </div>
 
       <!-- card 2 content -->
       <div class="card2">
-        <img src="Gambar_LandingPage/bulking_content3.png" alt="bulking" width="378" min-height="287" class="pb-lg-2 mb-4 img-fluid">
+        <img src="Gambar_LandingPage/bulking_content3.png" alt="bulking" width="378" min-height="287"
+          class="pb-lg-2 mb-4 img-fluid">
         <h2>BULKING</h2>
         <p>Menambah berat badan sekaligus menambah massa otot Anda!</p>
       </div>
@@ -208,17 +260,19 @@
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
-  
+
                 <label for="pwd" class="form-label">Password</label>
                 <div class="input-text-validation form-outline mb-3">
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd"
+                    required>
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
 
                 <div class="d-flex justify-content-between pb-lg-2 mb-4">
                   <p class="small"><a class="text-white-50" href="#!">Forgot password?</a></p>
-                  <a href="#" class="mb-0 ms-auto text-white-50" data-bs-toggle="modal" data-bs-target="#SignUpModal">Sign Up</a>
+                  <a href="#" class="mb-0 ms-auto text-white-50" data-bs-toggle="modal"
+                    data-bs-target="#SignUpModal">Sign Up</a>
                 </div>
 
                 <div class="text-end">
@@ -255,20 +309,23 @@
 
                 <label for="pwd" class="form-label">Password</label>
                 <div class="input-text-validation form-outline mb-3">
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd"
+                    required>
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
 
                 <label for="pwd" class="form-label">Confirm Password</label>
                 <div class="input-text-validation form-outline mb-3">
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd"
+                    required>
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
 
                 <div class="d-flex justify-content-between pb-lg-2 mb-4">
-                  <p class="small mb-0 ms-auto">Already have an account? <a href="#" class="text-white-50" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                  <p class="small mb-0 ms-auto">Already have an account? <a href="#" class="text-white-50"
+                      data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
                   </p>
                 </div>
 
@@ -285,7 +342,20 @@
     </div>
   </div>
 
-
+  <!-- script login header -->
+  <script>
+    window.onload = function () {
+      const email = sessionStorage.getItem('email');
+      if (email) {
+        document.querySelector('.logged-in-header').style.display = 'block';
+        document.querySelector('.logged-out-header').style.display = 'none';
+        document.getElementById('user-email').innerText = email;
+      } else {
+        document.querySelector('.logged-in-header').style.display = 'none';
+        document.querySelector('.logged-out-header').style.display = 'block';
+      }
+    }
+  </script>
 
 </body>
 

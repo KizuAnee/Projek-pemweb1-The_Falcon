@@ -11,17 +11,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
     <style>
         .btn {
             border-radius: 25px;
             border: none;
             background-color: #FFBE5C;
         }
+
+        /* CSS login header */
+        .logged-in-header {
+            display: none;
+        }
+
+        .logged-out-header {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
-    <div id="navbar" class="logged-out-header">
+    <div id="navbar" class="logged-in-header">
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container-fluid p-2">
                 <a class="navbar-brand text-light ms-5" href="landing_page.html">My Fitness</a>
@@ -35,19 +46,36 @@
                             <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Progresku</a>
                         </li>
                         <li class="nav-item mx-5">
-                            <a class="nav-link active text-light fw-bold" aria-current="page" href="tentang.html">Tentang</a>
+                            <a class="nav-link active text-light fw-bold" aria-current="page"
+                                href="tentang.html">Tentang</a>
                         </li>
                         <li class="nav-item mx-5">
                             <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Bantuan</a>
                         </li>
                     </ul>
                     <div class="d-flex ms-5">
-                        <a href="#" class="btn px-4 btn-light fw-bold">SIGN UP</a>
+                        <box-icon name='user-circle' type='solid' color='#ffffff'
+                            style="width: 65px; height: 36px;"></box-icon>
                     </div>
                 </div>
             </div>
         </nav>
     </div>
+
+    <!-- script login header, masukkan ke body akhir -->
+    <script>
+        window.onload = function () {
+            const email = sessionStorage.getItem('email');
+            if (email) {
+                document.querySelector('.logged-in-header').style.display = 'block';
+                document.querySelector('.logged-out-header').style.display = 'none';
+                document.getElementById('user-email').innerText = email;
+            } else {
+                document.querySelector('.logged-in-header').style.display = 'none';
+                document.querySelector('.logged-out-header').style.display = 'block';
+            }
+        }
+    </script>
 </body>
 
 </html>

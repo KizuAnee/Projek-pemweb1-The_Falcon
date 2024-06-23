@@ -1,23 +1,27 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SIGN UP</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <style>
-    .input-text-validation{
+    .input-text-validation {
       text-align: left;
     }
-    .sign-up{
+
+    .sign-up {
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;    
+      min-height: 100vh;
     }
+
     .card {
       background-color: #393939;
     }
@@ -39,40 +43,41 @@
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
           <div class="card text-white was-validated" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
-  
               <div class="mb-md-5 mt-md-4">
-  
                 <h2 class="fw-bold mb-3">Create An Account</h2>
-  
-                <label for="email" class="form-label">Email</label>
+
+                <label for="username" class="form-label">username</label>
                 <div class="input-text-validation form-outline mb-3">
-                  <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                  <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required>
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
-  
+
                 <label for="pwd" class="form-label">Password</label>
                 <div class="input-text-validation form-outline mb-3">
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd"
+                    required>
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
-  
-                <label for="pwd" class="form-label">Confirm Password</label>
+
+                <label for="confirmPwd" class="form-label">Confirm Password</label>
                 <div class="input-text-validation form-outline mb-3">
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                  <input type="password" class="form-control" id="confirmPwd" placeholder="Enter password" name="pswd"
+                    required>
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
-  
+
                 <div class="d-flex justify-content-between pb-lg-2 mb-3">
                   <p class="mb-0 ms-auto">Already have an account? <a href="login.html" class="text-white-50">Login</a>
                   </p>
                 </div>
-  
+
                 <div class="text-end">
                   <button data-mdb-button-init data-mdb-ripple-init
-                    class="btn btn-outline-light flex-row-reverse btn-lg px-5" type="submit">confirm</button>
+                    class="btn btn-outline-light flex-row-reverse btn-lg px-5" type="button"
+                    onclick="signup()">Confirm</button>
                 </div>
               </div>
             </div>
@@ -80,7 +85,54 @@
         </div>
       </div>
     </div>
-  
   </section>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCw0JQnVmwhXC_HrPk1lXja3iNs5tDA1Mk",
+      authDomain: "projek-pemweb-538e2.firebaseapp.com",
+      databaseURL: "https://projek-pemweb-538e2-default-rtdb.firebaseio.com",
+      projectId: "projek-pemweb-538e2",
+      storageBucket: "projek-pemweb-538e2.appspot.com",
+      messagingSenderId: "938803551824",
+      appId: "1:938803551824:web:43b89766ae169579527b55",
+      measurementId: "G-Z4P78BMM2X"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getDatabase(app);
+
+    window.signup = function () {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("pwd").value;
+      var confirmPassword = document.getElementById("confirmPwd").value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+      }
+
+      sessionStorage.setItem("username", username);
+
+      set(ref(db, 'users/' + username.replace('.', '_')), {
+        username: username,
+        password: password,
+        created_at: new Date().toISOString()
+      })
+        .then(() => {
+          alert("User registered successfully.");
+          window.location.href = "dataInput.html";
+        })
+        .catch((error) => {
+          alert("Failed to register user: " + error.message);
+        });
+    }
+  </script>
 </body>
+
 </html>
