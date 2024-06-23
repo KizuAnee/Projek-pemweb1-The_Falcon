@@ -232,6 +232,7 @@
           <div class="d-flex ms-5">
             <box-icon name='user-circle' type='solid' color='#ffffff' style="width: 72px; height: 48px;"
               data-bs-toggle="modal" data-bs-target="#logoutModal"></box-icon>
+              <div id="usernameDIsplay"></div>
           </div>
         </div>
       </div>
@@ -553,10 +554,7 @@
       var signUpModal = new bootstrap.Modal(document.getElementById('SignUpModal'));
       var dataInputModal = new bootstrap.Modal(document.getElementById('DataInputModal'));
 
-      // if (password !== confirmPassword) {
-      //   alert("Passwords do not match.");
-      //   return;
-      // }
+
       if (!username|| !password|| !confirmPassword) {
         alert("Please fill out all the fields.");
         return;
@@ -586,6 +584,9 @@
         });
 
     }
+
+    var usernameDisplay = document.getElementById("usernameDisplay");
+    usernameDisplay.textContent = "Username: " + username;
 
     // function completeData() {
     //   var age = document.getElementById("ageInput").value;
