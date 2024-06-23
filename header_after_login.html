@@ -43,7 +43,7 @@
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item mx-5">
-                            <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Progresku</a>
+                            <a class="nav-link active text-light fw-bold" aria-current="page" href="home.html">Progresku</a>
                         </li>
                         <li class="nav-item mx-5">
                             <a class="nav-link active text-light fw-bold" aria-current="page"
@@ -54,8 +54,8 @@
                         </li>
                     </ul>
                     <div class="d-flex ms-5">
-                        <box-icon name='user-circle' type='solid' color='#ffffff'
-                            style="width: 65px; height: 36px;"></box-icon>
+                        <box-icon id="user-icon" name='user-circle' type='solid' color='#ffffff'
+                            style="width: 65px; height: 36px;" title=""></box-icon>
                     </div>
                 </div>
             </div>
@@ -63,19 +63,27 @@
     </div>
 
     <!-- script login header, masukkan ke body akhir -->
-    <script>
-        window.onload = function () {
-            const username = sessionStorage.getItem('username');
+  <!-- script login header -->
+  <script>
+    window.onload = function () {
+      const username = sessionStorage.getItem('username');
             if (username) {
                 document.querySelector('.logged-in-header').style.display = 'block';
                 document.querySelector('.logged-out-header').style.display = 'none';
-                document.getElementById('user-username').innerText = username;
+                document.getElementById('user-icon').setAttribute('title', username);
             } else {
                 document.querySelector('.logged-in-header').style.display = 'none';
                 document.querySelector('.logged-out-header').style.display = 'block';
+                document.getElementById('user-icon').setAttribute('title', 'Guest');
             }
         }
-    </script>
+
+    function logout() {
+      sessionStorage.removeItem('username');
+      window.location.href = 'landing_page.html';
+    }
+    
+  </script>
 </body>
 
 </html>

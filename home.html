@@ -23,7 +23,10 @@
         }
 
         footer {
-            background-color: gray;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
         }
 
         .text-sm {
@@ -127,14 +130,16 @@
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item mx-5">
-                            <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Progresku</a>
+                            <a class="nav-link active text-light fw-bold" aria-current="page"
+                                href="home.html">Progresku</a>
                         </li>
                         <li class="nav-item mx-5">
                             <a class="nav-link active text-light fw-bold" aria-current="page"
                                 href="tentang.html">Tentang</a>
                         </li>
                         <li class="nav-item mx-5">
-                            <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Bantuan</a>
+                            <a class="nav-link active text-light fw-bold" aria-current="page"
+                                href="tentang.html">Bantuan</a>
                         </li>
                     </ul>
                     <div class="d-flex ms-5">
@@ -229,22 +234,6 @@
         </div>
     </div>
 
-    <footer class="text-center py-2" style="background-color: #D9D9D9;">
-        <div class="text-sm"><span class="fw-bold">My Fitness </span>| by The Falcon Team</div>
-        <div class="mt-2 justify-content-center gap-2">
-            <a href="https://www.instagram.com/educom23.ulm/" class="text-decoration-none text-white">
-                <box-icon name='instagram-alt' type='logo'></box-icon>
-            </a>
-            <a href="https://discord.gg/YrKarhSV" class="text-decoration-none text-white">
-                <box-icon name='discord-alt' type='logo'></box-icon>
-            </a>
-            <a href="https://github.com/KizuAnee/Projek-pemweb1-The_Falcon.git" class="text-decoration-none text-white">
-                <box-icon name='github' type='logo'></box-icon>
-            </a>
-        </div>
-    </footer>
-
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const userData = JSON.parse(sessionStorage.getItem('userData'));
@@ -292,5 +281,18 @@
 
     </script>
 </body>
-
+<footer class="text-center py-2" style="background-color: #D9D9D9;">
+    <div class="text-sm"><span class="fw-bold">My Fitness </span>| by The Falcon Team</div>
+    <div class="mt-2 justify-content-center gap-2">
+        <a href="https://www.instagram.com/educom23.ulm/" class="text-decoration-none text-white">
+            <box-icon name='instagram-alt' type='logo'></box-icon>
+        </a>
+        <a href="https://discord.gg/YrKarhSV" class="text-decoration-none text-white">
+            <box-icon name='discord-alt' type='logo'></box-icon>
+        </a>
+        <a href="https://github.com/KizuAnee/Projek-pemweb1-The_Falcon.git" class="text-decoration-none text-white">
+            <box-icon name='github' type='logo'></box-icon>
+        </a>
+    </div>
+</footer>
 </html>

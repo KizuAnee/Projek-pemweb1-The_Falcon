@@ -12,6 +12,16 @@
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <style>
+        /* navbar */
+        /* CSS login header */
+        .logged-in-header {
+            display: none;
+        }
+
+        .logged-out-header {
+            display: none;
+        }
+
         .custom-bg {
             background-color: #2D2D2D;
         }
@@ -59,9 +69,13 @@
             color: red;
         }
 
-        .btn {
-            border: none;
+        /* button */
+        .btn-signup,
+        .btn-login,
+        .btn-header,
+        .btn-content {
             border-radius: 25px;
+            border: none;
             background-color: #FFBE5C;
         }
 
@@ -77,8 +91,41 @@
     </style>
 </head>
 
-<body class="custom-bg">
-   <div id="navbar" class="logged-in-header">
+<body>
+    <!-- navbar -->
+    <!-- loggout -->
+    <div id="navbar" class="logged-out-header">
+        <nav class="navbar navbar-expand-lg bg-black">
+            <div class="container-fluid p-2">
+                <a class="navbar-brand text-light ms-5" href="first_page.html">My Fitness</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon bg-light"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item mx-5">
+                            <a class="nav-link active text-light fw-bold" data-bs-toggle="modal"
+                                data-bs-target="#loginModal" aria-current="page" href="#">Progresku</a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link active text-light fw-bold" href="tentang.html">Tentang</a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link active text-light fw-bold" href="tentang.html">Bantuan</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex ms-5">
+                        <a href="landing_page.html">
+                            <button type="button" class="btn btn-header px-4 btn-light fw-bold">SIGN UP</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- login -->
+    <div id="navbar" class="logged-in-header">
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container-fluid p-2">
                 <a class="navbar-brand text-light ms-5" href="landing_page.html">My Fitness</a>
@@ -89,24 +136,31 @@
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item mx-5">
-                            <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Progresku</a>
+                            <a class="nav-link active text-light fw-bold" aria-current="page"
+                                href="home.html">Progresku</a>
                         </li>
                         <li class="nav-item mx-5">
                             <a class="nav-link active text-light fw-bold" aria-current="page"
                                 href="tentang.html">Tentang</a>
                         </li>
                         <li class="nav-item mx-5">
-                            <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Bantuan</a>
+                            <a class="nav-link active text-light fw-bold" aria-current="page"
+                                href="tentang.html">Bantuan</a>
                         </li>
                     </ul>
                     <div class="d-flex ms-5">
-                        <box-icon name='user-circle' type='solid' color='#ffffff'
-                            style="width: 65px; height: 36px;"></box-icon>
+                        <box-icon id="user-icon" name='user-circle' type='solid' color='#ffffff'
+                            style="width: 65px; height: 36px;" title="" data-bs-toggle="modal"
+                            data-bs-target="#logoutModal"></box-icon>
                     </div>
                 </div>
             </div>
         </nav>
     </div>
+</body>
+
+<body class="custom-bg">
+
     <main class="container my-5">
         <h2 class="text-center text-white mb-4">TIPS OLAHRAGA</h2>
         <div class="row gy-4">
@@ -209,20 +263,59 @@
         </div>
     </main>
 
-    <footer class="text-center py-2" style="background-color: #D9D9D9;">
-        <div class="text-sm"><span class="fw-bold">My Fitness </span>| by The Falcon Team</div>
-        <div class="mt-2 justify-content-center gap-2">
-            <a href="https://www.instagram.com/educom23.ulm/" class="text-decoration-none text-white">
-                <box-icon name='instagram-alt' type='logo'></box-icon>
-            </a>
-            <a href="https://discord.gg/YrKarhSV" class="text-decoration-none text-white">
-                <box-icon name='discord-alt' type='logo'></box-icon>
-            </a>
-            <a href="https://github.com/KizuAnee/Projek-pemweb1-The_Falcon.git" class="text-decoration-none text-white">
-                <box-icon name='github' type='logo'></box-icon>
-            </a>
+    <!-- Logout modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <p style="color: black;">Are you sure you want to logout?</p>
+                    <div>
+                        <button type="button" class="btn btn-outline-secondary me-3"
+                            data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger" onclick="logout()">Logout</button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
+
+    <!-- script login header, masukkan ke body akhir -->
+    <!-- script login header -->
+    <script>
+        window.onload = function () {
+            const username = sessionStorage.getItem('username');
+            if (username) {
+                document.querySelector('.logged-in-header').style.display = 'block';
+                document.querySelector('.logged-out-header').style.display = 'none';
+                document.getElementById('user-icon').setAttribute('title', username);
+            } else {
+                document.querySelector('.logged-in-header').style.display = 'none';
+                document.querySelector('.logged-out-header').style.display = 'block';
+                document.getElementById('user-icon').setAttribute('title', 'Guest');
+            }
+        }
+
+        function logout() {
+            sessionStorage.removeItem('username');
+            window.location.href = 'landing_page.html';
+        }
+
+    </script>
+
 </body>
+<footer class="text-center py-2" style="background-color: #D9D9D9;">
+    <div class="text-sm"><span class="fw-bold">My Fitness </span>| by The Falcon Team</div>
+    <div class="mt-2 justify-content-center gap-2">
+        <a href="https://www.instagram.com/educom23.ulm/" class="text-decoration-none text-white">
+            <box-icon name='instagram-alt' type='logo'></box-icon>
+        </a>
+        <a href="https://discord.gg/YrKarhSV" class="text-decoration-none text-white">
+            <box-icon name='discord-alt' type='logo'></box-icon>
+        </a>
+        <a href="https://github.com/KizuAnee/Projek-pemweb1-The_Falcon.git" class="text-decoration-none text-white">
+            <box-icon name='github' type='logo'></box-icon>
+        </a>
+    </div>
+</footer>
 
 </html>

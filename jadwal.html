@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -13,15 +13,6 @@
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <style>
-        /* CSS login header */
-        .logged-in-header {
-            display: none;
-        }
-
-        .logged-out-header {
-            display: none;
-        }
-
         #navbar {
             position: sticky;
             top: 0;
@@ -31,82 +22,35 @@
             font-family: 'Segoe UI';
             font-size: 24px;
             font-weight: 300;
-            color: white;
         }
 
-        p {
+        p{
             font-family: 'Segoe UI';
             font-size: 22px;
             font-weight: 100;
-            color: white;
         }
-
         #navbar .btn {
             border-radius: 25px;
             border: none;
             background-color: #FFBE5C;
         }
-
         /* content */
-        .content {
+        .content{
             padding: 36px;
             text-align: center;
             justify-content: center;
             align-items: center;
             background-color: #2D2D2D;
-            color: white;
+        }
+        CSS login header
+        .logged-in-header {
+            display: none;
         }
 
-        /* kalender */
-        .calendar {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 10px;
-            margin-top: 20px;
+        .logged-out-header {
+            display: none;
         }
 
-        .calendar-day {
-            position: relative;
-            text-align: center;
-            background-color: rgba(255, 190, 92, 0.45);
-            /* Warna orange dengan opacity 45% */
-            padding: 10px;
-            border-radius: 10px;
-        }
-
-        .calendar-day.marked {
-            background-color: #FFBE5C;
-            /* Warna orange */
-        }
-
-        .text-lg {
-            font-size: 32px;
-        }
-
-        .text-smaller {
-            font-size: 22px;
-        }
-
-        /* Kontainer Latihan */
-        .exercise-container {
-            overflow: hidden;
-            background-color: #434343;
-            text-align: justify;
-            border-radius: 26px;
-            padding-left: 0%;
-            padding-right: 45px;
-            margin-bottom: 20px;
-        }
-
-        .exercise-container img {
-            padding-right: 60px;
-            border-radius: 13px;
-            margin: 12px;
-        }
-
-        .text-content {
-            padding: 2%;
-        }
     </style>
 </head>
 
@@ -126,22 +70,19 @@
                             <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Progresku</a>
                         </li>
                         <li class="nav-item mx-5">
-                            <a class="nav-link active text-light fw-bold" aria-current="page"
-                                href="tentang.html">Tentang</a>
+                            <a class="nav-link active text-light fw-bold" aria-current="page" href="tentang.html">Tentang</a>
                         </li>
                         <li class="nav-item mx-5">
                             <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Bantuan</a>
                         </li>
                     </ul>
                     <div class="d-flex ms-5">
-                        <box-icon name='user-circle' type='solid' color='#ffffff' style="width: 72px; height: 48px;"
-                            data-bs-toggle="modal" data-bs-target="#logoutModal"></box-icon>
+                        <a href="#" class="btn px-4 btn-light fw-bold">SIGN UP</a>
                     </div>
                 </div>
             </div>
         </nav>
     </div>
-
     <div id="navbar" class="logged-in-header">
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container-fluid p-2">
@@ -174,189 +115,80 @@
 
 
     <!-- content -->
-    <div class="content">
+     <div class="content">
         <!-- RUNTUTAN -->
-        <div class="text-sm text-lg">JADWAL LATIHAN</div>
-        <div class="text mt-5 text-lg">Kalender Runtutan</div>
-        <!-- kalender runtutan -->
-        <div id="kalender-runtutan" class="calendar mt-3"></div>
-
-        <!-- Latihan Hari Ini -->
-        <div class="text mt-5 text-lg">Latihan Hari Ini</div>
-        <p style="margin-bottom: 5%;" class="text-smaller">Sebelum latihan dimulai, harap melakukan pemanasan selama
-            5-10 menit
-            untuk menghindari cedera</p>
-
-        <!-- Kontainer Latihan -->
-        <!-- latihan -->
-        <div class="container">
+         <div class="text-sm" style="font-size: 46px; color: white;">JADWAL LATIHAN</div>
+         <div class="text mt-5" style="font-size: 32px; color: white;">Latihan Hari Ini</div>
+         <p style="color: white; margin-bottom: 5%;">Sebelum latihan dimulai, harap melakukan pemanasan selama 5-10 menit untuk menghindari cedera</p>
+         
+         <!-- latihan -->
+         <div class="container">
             <!-- 1 -->
-            <div class="container mb-4"
-                style="overflow: hidden; background-color: #434343; text-align: justify; border-radius: 26px; padding-left: 0%; padding-right: 45px;">
-                <img src="Gambar_latihan/SQUAT.png" alt="SQUAT" class="float-start"
-                    style="padding-right: 60px; border-radius: 13px; margin: 12px;">
+             <div class="container mb-4" style="overflow: hidden; background-color: #434343; text-align: justify; border-radius: 26px; padding-left: 0%; padding-right: 45px;">
+                <img src="Gambar_latihan/SQUAT.png" alt="SQUAT" class="float-start" style="padding-right: 60px; border-radius: 13px; margin: 12px;">
                 <div class="text-content" style="padding: 2%;">
                     <h4 style="color: white; margin: 3%;">SQUAT 15 kali</h4>
                     <p style="color: white;">
-                        Berdirilah dengan kaki selebar bahu. Turunkan pinggul seolah-olah kamu ingin duduk di kursi,
+                        Berdirilah dengan kaki selebar bahu. Turunkan pinggul seolah-olah kamu ingin duduk di kursi, 
                         jaga agar lutut sejajar dengan jari kaki. Kembali ke posisi awal dan ulangi.
                     </p>
                 </div>
             </div>
-            <!-- 2 -->
-            <div class="container mb-4"
-                style="overflow: hidden; background-color: #434343; text-align: justify; border-radius: 26px; padding-left: 0%; padding-right: 45px;">
-                <img src="Gambar_latihan/SQUAT.png" alt="SQUAT" class="float-start"
-                    style="padding-right: 60px; border-radius: 13px; margin: 12px;">
+              <!-- 2 -->
+              <div class="container mb-4" style="overflow: hidden; background-color: #434343; text-align: justify; border-radius: 26px; padding-left: 0%; padding-right: 45px;">
+                <img src="Gambar_latihan/SQUAT.png" alt="SQUAT" class="float-start" style="padding-right: 60px; border-radius: 13px; margin: 12px;">
                 <div class="text-content" style="padding: 2%;">
                     <h4 style="color: white; margin: 3%;">SQUAT 15 kali</h4>
                     <p style="color: white;">
-                        Berdirilah dengan kaki selebar bahu. Turunkan pinggul seolah-olah kamu ingin duduk di kursi,
+                        Berdirilah dengan kaki selebar bahu. Turunkan pinggul seolah-olah kamu ingin duduk di kursi, 
                         jaga agar lutut sejajar dengan jari kaki. Kembali ke posisi awal dan ulangi.
                     </p>
                 </div>
             </div>
-            <!-- 3 -->
-            <div class="container mb-4"
-                style="overflow: hidden; background-color: #434343; text-align: justify; border-radius: 26px; padding-left: 0%; padding-right: 45px;">
-                <img src="Gambar_latihan/SQUAT.png" alt="SQUAT" class="float-start"
-                    style="padding-right: 60px; border-radius: 13px; margin: 12px;">
+              <!-- 3 -->
+              <div class="container mb-4" style="overflow: hidden; background-color: #434343; text-align: justify; border-radius: 26px; padding-left: 0%; padding-right: 45px;">
+                <img src="Gambar_latihan/SQUAT.png" alt="SQUAT" class="float-start" style="padding-right: 60px; border-radius: 13px; margin: 12px;">
                 <div class="text-content" style="padding: 2%;">
                     <h4 style="color: white; margin: 3%;">SQUAT 15 kali</h4>
                     <p style="color: white;">
-                        Berdirilah dengan kaki selebar bahu. Turunkan pinggul seolah-olah kamu ingin duduk di kursi,
+                        Berdirilah dengan kaki selebar bahu. Turunkan pinggul seolah-olah kamu ingin duduk di kursi, 
                         jaga agar lutut sejajar dengan jari kaki. Kembali ke posisi awal dan ulangi.
                     </p>
                 </div>
             </div>
-            <!-- 4 -->
-            <div class="container mb-4"
-                style="overflow: hidden; background-color: #434343; text-align: justify; border-radius: 26px; padding-left: 0%; padding-right: 45px;">
-                <img src="Gambar_latihan/SQUAT.png" alt="SQUAT" class="float-start"
-                    style="padding-right: 60px; border-radius: 13px; margin: 12px;">
+              <!-- 4 -->
+              <div class="container mb-4" style="overflow: hidden; background-color: #434343; text-align: justify; border-radius: 26px; padding-left: 0%; padding-right: 45px;">
+                <img src="Gambar_latihan/SQUAT.png" alt="SQUAT" class="float-start" style="padding-right: 60px; border-radius: 13px; margin: 12px;">
                 <div class="text-content" style="padding: 2%;">
                     <h4 style="color: white; margin: 3%;">SQUAT 15 kali</h4>
                     <p style="color: white;">
-                        Berdirilah dengan kaki selebar bahu. Turunkan pinggul seolah-olah kamu ingin duduk di kursi,
+                        Berdirilah dengan kaki selebar bahu. Turunkan pinggul seolah-olah kamu ingin duduk di kursi, 
                         jaga agar lutut sejajar dengan jari kaki. Kembali ke posisi awal dan ulangi.
                     </p>
                 </div>
             </div>
-        </div>
+         </div>        
+        
+         <button type="button" class="btn btn-outline-light text-sm lg m-4" style="border-radius: 15px;">Saya sudah menyelesaikan latihan hari ini!</button>
+     </div>
 
-        <!-- Tombol Selesai -->
-        <button type="button" class="btn btn-outline-light text-sm lg m-4" style="border-radius: 15px;">Saya sudah
-            menyelesaikan latihan hari ini!</button>
-    </div>
 
-    <!-- Footer -->
-    <footer class="text-center py-2" style="background-color: #D9D9D9;">
-        <div class="text-sm"><span class="fw-bold">My Fitness </span>| by The Falcon Team</div>
-        <div class="mt-2 justify-content-center gap-2">
-            <a href="https://www.instagram.com/educom23.ulm/" class="text-decoration-none text-white">
-                <box-icon name='instagram-alt' type='logo'></box-icon>
-            </a>
-            <a href="https://discord.gg/YrKarhSV" class="text-decoration-none text-white">
-                <box-icon name='discord-alt' type='logo'></box-icon>
-            </a>
-            <a href="https://github.com/KizuAnee/Projek-pemweb1-The_Falcon.git" class="text-decoration-none text-white">
-                <box-icon name='github' type='logo'></box-icon>
-            </a>
-        </div>
-    </footer>
 
-    <!-- Firebase JavaScript SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"></script>
-    <script>
-        // Konfigurasi Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyCw0JQnVmwhXC_HrPk1lXja3iNs5tDA1Mk",
-            authDomain: "projek-pemweb-538e2.firebaseapp.com",
-            databaseURL: "https://projek-pemweb-538e2-default-rtdb.firebaseio.com",
-            projectId: "projek-pemweb-538e2",
-            storageBucket: "projek-pemweb-538e2.appspot.com",
-            messagingSenderId: "938803551824",
-            appId: "1:938803551824:web:43b89766ae169579527b55",
-            measurementId: "G-Z4P78BMM2X"
-        };
-
-        // Inisialisasi Firebase
-        firebase.initializeApp(firebaseConfig);
-
-        // Referensi ke Firebase Database
-        const database = firebase.database();
-
-        // Fungsi untuk menampilkan kalender runtutan latihan
-        function tampilkanKalenderRuntutan() {
-            const kalenderRuntutan = document.getElementById('kalender-runtutan');
-
-            // Ambil data runtutan latihan dari Firebase Database
-            database.ref('runtutan-latihan').once('value')
-                .then((snapshot) => {
-                    snapshot.forEach((childSnapshot) => {
-                        const latihan = childSnapshot.val().latihan;
-                        const tanggal = new Date(childSnapshot.val().tanggal);
-                        const selesai = childSnapshot.val().selesai || false;
-
-                        // Buat elemen untuk setiap hari dalam kalender
-                        const dayElement = document.createElement('div');
-                        dayElement.classList.add('calendar-day');
-                        if (selesai) {
-                            dayElement.classList.add('marked');
-                        }
-                        dayElement.textContent = tanggal.getDate();
-
-                        // Tambahkan elemen ke dalam kalender
-                        kalenderRuntutan.appendChild(dayElement);
-                    });
-                })
-                .catch((error) => {
-                    console.error('Error mengambil data runtutan latihan:', error);
-                });
-        }
-
-        // Panggil fungsi tampilkanKalenderRuntutan saat halaman dimuat
-        document.addEventListener('DOMContentLoaded', tampilkanKalenderRuntutan);
-    </script>
-    <script>
-        <!-- Logout modal -->
-        <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body text-center">
-                        <p style="color: white;">Are you sure you want to logout?</p>
-                        <div>
-                            <button type="button" class="btn btn-outline-secondary me-3"
-                                data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-danger" onclick="logout()">Logout</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </script>
-
-    <!-- script login header, masukkan ke body akhir -->
-    <!-- script login header -->
-    <script>
-        window.onload = function () {
-            const username = sessionStorage.getItem('username');
-            if (username) {
-                document.querySelector('.logged-in-header').style.display = 'block';
-                document.querySelector('.logged-out-header').style.display = 'none';
-                document.getElementById('user-username').innerText = username;
-            } else {
-                document.querySelector('.logged-in-header').style.display = 'none';
-                document.querySelector('.logged-out-header').style.display = 'block';
-            }
-        }
-
-        function logout() {
-            sessionStorage.removeItem('username');
-            window.location.href = 'landing_page.html'; // Redirect to your desired logout page
-        }
-    </script>
 </body>
+
+<footer class="text-center py-2" style="background-color: #D9D9D9;">
+    <div class="text-sm"><span class="fw-bold">My Fitness </span>| by The Falcon Team</div>
+    <div class="mt-2 justify-content-center gap-2">
+        <a href="https://www.instagram.com/educom23.ulm/" class="text-decoration-none text-white">
+            <box-icon name='instagram-alt' type='logo'></box-icon>
+        </a>
+        <a href="https://discord.gg/YrKarhSV" class="text-decoration-none text-white">
+            <box-icon name='discord-alt' type='logo'></box-icon>
+        </a>
+        <a href="https://github.com/KizuAnee/Projek-pemweb1-The_Falcon.git" class="text-decoration-none text-white">
+            <box-icon name='github' type='logo'></box-icon>
+        </a>
+    </div>
+</footer>
 
 </html>
