@@ -355,31 +355,35 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark">
-        <div class="container-fluid p-2">
-            <a class="navbar-brand text-light ms-5" href="#">My Fitness</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon bg-light"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item mx-5">
-                        <a class="nav-link active text-light fw-bold" aria-current="page" href="tes2.html">Progresku</a>
-                    </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Tentang</a>
-                    </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Bantuan</a>
-                    </li>
-                </ul>
-                <div class="d-flex ms-5">
-                    <a href="#" class="btn btn-light px-4 fw-bold">SIGN UP</a>
+    <div id="navbar" class="logged-in-header">
+        <nav class="navbar navbar-expand-lg bg-black">
+            <div class="container-fluid p-2">
+                <a class="navbar-brand text-light ms-5" href="landing_page.html">My Fitness</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon bg-light"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item mx-5">
+                            <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Progresku</a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link active text-light fw-bold" aria-current="page"
+                                href="tentang.html">Tentang</a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Bantuan</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex ms-5">
+                        <box-icon name='user-circle' type='solid' color='#ffffff'
+                            style="width: 65px; height: 36px;"></box-icon>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
     <div>
         <div class="kalkulator">
             <div class="kolom-kiri">
@@ -399,7 +403,7 @@
                 <h1 id="demo3"><b>0 Kcal</b></h1>
                 <hr class="garis-kalkulator-kanan">
                 <h2 class="max"><b>MAX</b></h2>
-                <h1 id="demo4"><b>0 kcal</b></h1>
+                <h1 id="demo4"><b>0 Kcal</b></h1>
             </div>
         </div>
         
@@ -518,7 +522,6 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-    // Your web app's Firebase configuration
     const firebaseConfig = {
         apiKey: "AIzaSyCw0JQnVmwhXC_HrPk1lXja3iNs5tDA1Mk",
         authDomain: "projek-pemweb-538e2.firebaseapp.com",
@@ -530,16 +533,13 @@
         measurementId: "G-Z4P78BMM2X"
     };
 
-    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
 
-    // Initialize Realtime Database and get a reference to the service
     const database = getDatabase(app);
 
-    // Reference to your data
     const dataRef = ref(database, 'users/defaultUser/data');
 
-    // BMR Calculation function using Harris-Benedict equation
+    // fungsi menghitung bmr
     function calculateBMR(age, gender, height, weight) {
         if (gender.toLowerCase() === 'male') {
             return 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
@@ -548,18 +548,18 @@
         }
     }
 
-    // TDEE Calculation function using a simple activity multiplier
-    function calculateTDEE(bmr, activityLevel = 1.2) { // Default activity level: Sedentary
+    // fungsi menghitung tdee
+    function calculateTDEE(bmr, activityLevel = 1.2) { 
         return bmr * activityLevel;
     }
 
-    // Get the data
+    // Dapatkan data
     onValue(dataRef, (snapshot) => {
         const data = snapshot.val();
         const dataDisplay = document.getElementById('demo4');
-        dataDisplay.innerHTML = ''; // Clear previous content
+        dataDisplay.innerHTML = '';
 
-        // Display the data
+        // menampilkan data
         if (data) {
             const age = parseInt(data.age);
             const gender = data.gender;
@@ -567,15 +567,14 @@
             const weight = parseInt(data.weight);
 
             const bmr = calculateBMR(age, gender, height, weight);
-            const tdee = calculateTDEE(bmr); // Using default activity level
-
+            const tdee = calculateTDEE(bmr); 
             const userDiv = document.createElement('div');
             userDiv.innerHTML = `
                 <p> ${Math.round(tdee)} Kcal</p>
             `;
             dataDisplay.appendChild(userDiv);
         } else {
-            dataDisplay.innerHTML = '<p>No data available</p>';
+            dataDisplay.innerHTML = '<p>0 Kcal</p>';
         }
 
         checkCalorieLimit();
@@ -583,6 +582,7 @@
 </script>
 
 <script>
+    
     const DATE_KEY = 'currentDate';
     const STORAGE_KEY = 'totalSavedCalories';
     let hasil = 0;
@@ -828,8 +828,4 @@
 
         loadData();
 </script>
-
 </html>
-
-</html>
-
