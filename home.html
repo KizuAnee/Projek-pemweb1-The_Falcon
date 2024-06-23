@@ -133,16 +133,14 @@
                     <div class="col-md-12 small-container mb-4 mx-5">
                         <div class="p-3 bg-secondary rounded">
                             <h2>STATUS TUBUH</h2>
-                            <p>data diambil dari input data saat membuat akun, dan perhitungan dari latihan yang
+                            <p>Data diambil dari input data saat membuat akun, dan perhitungan dari latihan yang
                                 dilakukan</p>
                             <div class="d-flex align-items-center mb-3">
                                 <h3 class="mr-3">NORMAL</h3>
                                 <span>*</span>
                             </div>
-                            <div>
-                                tinggi: 172 cm<br>
-                                berat: 65 kg<br>
-                                umur: 30 tahun
+                            <div id="userData">
+                                <!-- User data will be inserted here -->
                             </div>
                             <div class="my-4">
                                 <div class="d-flex justify-content-between">
@@ -211,6 +209,23 @@
             </a>
         </div>
     </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const userData = JSON.parse(sessionStorage.getItem('userData'));
+          if (userData) {
+            const userDataDiv = document.getElementById('userData');
+            userDataDiv.innerHTML = `
+              tinggi: ${userData.height} cm<br>
+              berat: ${userData.weight} kg<br>
+              umur: ${userData.age} tahun
+            `;
+          } else {
+            alert('No user data found. Please go back and fill out the form.');
+          }
+        });
+      </script>
 </body>
 
 </html>
