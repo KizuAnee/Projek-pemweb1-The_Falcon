@@ -105,13 +105,19 @@
       let password = document.getElementById('pwd').value;
 
       try {
-        const db = getDatabase(app);
-        const dbRef = ref(db);
-        const snapshot = await get(child(dbRef, `users/${username.replace(/[.$\[\]#\/]/g, ',')}`));
+        const snapshot = await get(child(ref(db), `users/${username.replace(/[.$\[\]#\/]/g, ',')}`));
 
+        // Check input
+        // jika data kosong
+        if (!username || !password) {
+          alert("All fields are required.");
+          return;
+        }
         if (snapshot.exists() && snapshot.val().password === password) {
+          // set username in session storage
           sessionStorage.setItem('username', username);
           alert('Login successful');
+          //  to landing page or desired location
           window.location.href = 'landing_page.html';
         } else {
           alert('Invalid username or password');

@@ -383,7 +383,6 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
-
           <div class="card-datainput text-white" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
               <div class="mb-md-5 mt-md-4 form-section">
@@ -391,66 +390,71 @@
                 <p class="small text-white-50 text-center">The data you fill in will be our benchmark in creating
                   appropriate exercises!</p>
 
-                <label class="form-label" for="ageInput">Age</label>
-                <div class="form-outline form-white mb-4">
-                  <input type="number" id="ageInput" class="form-control form-control-lg" />
-                </div>
+                <!-- Form -->
+                <form id="dataInputForm" action="#" method="post">
 
-                <label class="form-label" for="weightInput">Body Weight</label>
-                <div class="form-outline form-white mb-4">
-                  <input type="number" id="weightInput" class="form-control form-control-lg" />
-                </div>
-
-                <label class="form-label" for="heightInput">Height</label>
-                <div class="form-outline form-white mb-4">
-                  <input type="number" id="heightInput" class="form-control form-control-lg" />
-                </div>
-
-                <div class="col-md-6 mb-4">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gender" id="maleGender" value="male" />
-                    <label class="form-check-label" for="maleGender">Male</label>
+                  <label class="form-label" for="ageInput">Age</label>
+                  <div class="form-outline form-white mb-4">
+                    <input type="number" id="ageInput" class="form-control form-control-lg" required />
                   </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="female"
-                      checked />
-                    <label class="form-check-label" for="femaleGender">Female</label>
+
+                  <label class="form-label" for="weightInput">Body Weight</label>
+                  <div class="form-outline form-white mb-4">
+                    <input type="number" id="weightInput" class="form-control form-control-lg" required />
                   </div>
-                </div>
 
-                <p class="small text-white-75">Which exercise program do you want to start?</p>
-                <div class="mb-4 d-flex gap-2">
-                  <button type="button" class="btn btn-datainput btn-outline-light btn-lg program">Bulking</button>
-                  <p class="my-auto">or</p>
-                  <button type="button" class="btn btn-datainput btn-outline-light btn-lg program">Cutting</button>
-                </div>
+                  <label class="form-label" for="heightInput">Height</label>
+                  <div class="form-outline form-white mb-4">
+                    <input type="number" id="heightInput" class="form-control form-control-lg" required />
+                  </div>
 
-                <p class="small text-white-75">Before confirming, type your password</p>
-                <div class="form-outline mb-4">
-                  <input type="password" id="passwordInput" class="form-control form-control-lg" />
-                </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender" id="maleGender" value="male"
+                        required />
+                      <label class="form-check-label" for="maleGender">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="female"
+                        checked required />
+                      <label class="form-check-label" for="femaleGender">Female</label>
+                    </div>
+                  </div>
 
-                <p class="small text-white-55 text-center">By clicking <b>confirm</b>, you agree to our <b>User
-                    Agreement, Privacy Policy, and Cookie Policy</b></p>
+                  <p class="small text-white-75">Which exercise program do you want to start?</p>
+                  <div class="mb-4 d-flex gap-2">
+                    <button type="button" class="btn btn-datainput btn-outline-light btn-lg program">Bulking</button>
+                    <p class="my-auto">or</p>
+                    <button type="button" class="btn btn-datainput btn-outline-light btn-lg program">Cutting</button>
+                  </div>
 
-                <div class="text-end">
-                  <!-- to homepage -->
-                  <form action="#" method="post">
-                    <input class="btn btn-datainput btn-outline-light flex-row-reverse btn-lg px-5" type="submit"
-                      value="Save Data" onclick="calculateCalories()">
-                  </form>
-                </div>
+                  <p class="small text-white-75">Before confirming, type your password</p>
+                  <div class="form-outline mb-4">
+                    <input type="password" id="passwordInput" class="form-control form-control-lg" required />
+                  </div>
 
+                  <p class="small text-white-55 text-center">By clicking <b>confirm</b>, you agree to our <b>User
+                      Agreement, Privacy Policy, and Cookie Policy</b></p>
+
+                  <div class="text-end">
+                    <!-- Button to save data -->
+                    <button type="button" class="btn btn-datainput btn-outline-light flex-row-reverse btn-lg px-5"
+                      onclick="calculateCalories()">Save Data</button>
+                  </div>
+                </form>
+                <!-- End Form -->
+
+                <!-- Result display -->
                 <div id="total"></div>
 
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </div>
+
 
   <!-- Logout modal -->
   <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
@@ -459,8 +463,8 @@
         <div class="modal-body text-center">
           <p style="color: white;">Are you sure you want to logout?</p>
           <div>
-            <button type="button" class="btn-login btn-outline-secondary me-3" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn-login btn-danger" onclick="logout()">Logout</button>
+            <button type="button" class="btn btn-outline-secondary me-3" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger" onclick="logout()">Logout</button>
           </div>
         </div>
       </div>
@@ -510,6 +514,7 @@
 
     // Initialize Firebase app
     const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
     const db = getDatabase(app);
 
     // login
@@ -530,8 +535,8 @@
           // set username in session storage
           sessionStorage.setItem('username', username);
           alert('Login successful');
-          // //  to landing page or desired location
-          // window.location.href = 'landing_page.html';
+          //  to landing page or desired location
+          window.location.href = 'landing_page.html';
         } else {
           alert('Invalid username or password');
         }
@@ -542,66 +547,91 @@
 
     // signup
     window.signup = function () {
-      var username = document.getElementById("signup-username").value;
-      var password = document.getElementById("signup-pwd").value;
-      var confirmPwd = document.getElementById("confirmPwd").value;
-
-      if (username === "" || password === "" || confirmPwd === "") {
-        alert("Please fill out all the fields.");
-        return;
-      }
-
-      if (password !== confirmPwd) {
-        alert("Passwords do not match.");
-        return;
-      }
-
-      // Close the signup modal
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("pwd").value;
+      var confirmPassword = document.getElementById("confirmPwd").value;
       var signUpModal = new bootstrap.Modal(document.getElementById('SignUpModal'));
-      signUpModal.hide();
-
-      // Show the data input modal
       var dataInputModal = new bootstrap.Modal(document.getElementById('DataInputModal'));
-      dataInputModal.show();
-    }
 
-    function completeData() {
-      var age = document.getElementById("ageInput").value;
-      var weight = document.getElementById("weightInput").value;
-      var height = document.getElementById("heightInput").value;
-      var gender = document.querySelector('input[name="gender"]:checked').value;
-
-      if (age === "" || weight === "" || height === "" || gender === "") {
+      // if (password !== confirmPassword) {
+      //   alert("Passwords do not match.");
+      //   return;
+      // }
+      if (username === "" || password === "" || confirmPassword === "") {
         alert("Please fill out all the fields.");
         return;
       }
 
-      // Close the data input modal
-      var dataInputModal = new bootstrap.Modal(document.getElementById('DataInputModal'));
-      dataInputModal.hide();
+      sessionStorage.setItem("username", username);
 
-      // Show the login modal
-      var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
-      loginModal.show();
+      set(ref(db, 'users/' + username.replace('.', '_')), {
+        username: username,
+        password: password,
+        created_at: new Date().toISOString()
+      })
+        .then(() => {
+          alert("User registered successfully.");
+          // Close the signup modal
+          signUpModal.hide();
+
+          // Show the data input modal
+          dataInputModal.show();
+        })
+        .catch((error) => {
+          alert("Failed to register user: " + error.message);
+        });
+
     }
+
+    // function completeData() {
+    //   var age = document.getElementById("ageInput").value;
+    //   var weight = document.getElementById("weightInput").value;
+    //   var height = document.getElementById("heightInput").value;
+    //   var gender = document.querySelector('input[name="gender"]:checked').value;
+
+    //   if (age === "" || weight === "" || height === "" || gender === "") {
+    //     alert("Please fill out all the fields.");
+    //     return;
+    //   }
+
+    //   // Close the data input modal
+    //   var dataInputModal = new bootstrap.Modal(document.getElementById('DataInputModal'));
+    //   dataInputModal.hide();
+
+    //   // Show the login modal
+    //   var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+    //   loginModal.show();
+    // }
 
     // data input
-    window.saveData = async function () {
-      const username = sessionStorage.getItem('username') || 'defaultUser'; // Menetapkan nilai default jika 'username' null
+    window.calculateCalories = async function () {
+      const username = sessionStorage.getItem('username') || 'defaultUser';
       const age = parseInt(document.getElementById('ageInput').value);
       const weight = parseInt(document.getElementById('weightInput').value);
       const height = parseInt(document.getElementById('heightInput').value);
       const gender = document.querySelector('input[name="gender"]:checked').value;
       const program = document.querySelector('button.active').innerText.toLowerCase();
+      const password = document.getElementById('passwordInput').value;
 
-      if (!age || !weight || !height || !gender) {
+      // Validate inputs
+      if (!age || !weight || !height || !gender || !password) {
         alert("Please fill out all fields.");
         return;
+      } else {
+        alert("Save Data successfully")
+        // Close the data input modal
+        var dataInputModal = new bootstrap.Modal(document.getElementById('DataInputModal'));
+        dataInputModal.hide();
+
+        // Show the login modal
+        var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+        loginModal.show();
       }
 
       try {
+        // Save data to Firebase
         const db = getDatabase(app);
-        const userRef = ref(db, 'users/' + username.replace(/[.$\[\]#\/]/g, ',') + '/data'); // Menggunakan username yang telah diolah
+        const userRef = ref(db, 'users/' + username.replace(/[.$\[\]#\/]/g, ',') + '/data');
         await set(userRef, {
           age: age,
           weight: weight,
@@ -610,13 +640,58 @@
           program: program
         });
 
+        // Save user data to sessionStorage
+        sessionStorage.setItem('userData', JSON.stringify({
+          age,
+          weight,
+          height,
+          gender
+        }));
+
         alert('Data saved successfully');
-        sessionStorage.setItem('userData', JSON.stringify({ age, weight, height, gender }));
         window.location.href = 'landing_page.html';
       } catch (error) {
         alert('Error saving data: ' + error.message);
       }
+
+      // kalkulator
+      let bmr;
+
+      // Calculate BMR using the Harris-Benedict equation
+      if (gender === 'male') {
+        bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+      } else {
+        bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+      }
+
+      // Calculate TDEE assuming a moderate activity level
+      const tdee = bmr * 1.55;
+
+      let calories;
+      if (program === 'bulking') {
+        calories = tdee + 500;
+      } else {
+        calories = tdee - 500;
+      }
+
+      const total = `${Math.round(calories)} Kcal.`;
+      document.getElementById("total").textContent = total;
+      sessionStorage.setItem("hasil", total);
     }
+
+    // kalkulator
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('button.program').forEach(button => {
+        button.addEventListener('click', () => {
+          document.querySelectorAll('button.program').forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+        });
+      });
+
+      document.querySelector('button[type="submit"]').addEventListener('click', (event) => {
+        event.preventDefault();
+      });
+    });
   </script>
 </body>
 
