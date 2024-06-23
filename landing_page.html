@@ -547,8 +547,8 @@
 
     // signup
     window.signup = function () {
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("pwd").value;
+      var username = document.getElementById("signup-username").value;
+      var password = document.getElementById("signup-pwd").value;
       var confirmPassword = document.getElementById("confirmPwd").value;
       var signUpModal = new bootstrap.Modal(document.getElementById('SignUpModal'));
       var dataInputModal = new bootstrap.Modal(document.getElementById('DataInputModal'));
@@ -557,8 +557,12 @@
       //   alert("Passwords do not match.");
       //   return;
       // }
-      if (username === "" || password === "" || confirmPassword === "") {
+      if (!username|| !password|| !confirmPassword) {
         alert("Please fill out all the fields.");
+        return;
+      }
+      if (password != confirmPassword){
+        alert("Password do not match")
         return;
       }
 
