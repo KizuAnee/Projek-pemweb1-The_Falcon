@@ -65,11 +65,11 @@
     <!-- script login header, masukkan ke body akhir -->
     <script>
         window.onload = function () {
-            const email = sessionStorage.getItem('email');
-            if (email) {
+            const username = sessionStorage.getItem('username');
+            if (username) {
                 document.querySelector('.logged-in-header').style.display = 'block';
                 document.querySelector('.logged-out-header').style.display = 'none';
-                document.getElementById('user-email').innerText = email;
+                document.getElementById('user-username').innerText = username;
             } else {
                 document.querySelector('.logged-in-header').style.display = 'none';
                 document.querySelector('.logged-out-header').style.display = 'block';

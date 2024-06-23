@@ -11,66 +11,69 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   <style>
-    body{
+    body {
       background-color: black;
     }
 
-    .btn{
+    .btn {
       border: none;
       border-radius: 25px;
       background-color: #FFBE5C;
     }
 
-    footer{
+    footer {
       margin-top: 10px;
     }
 
-    .text-sm{
+    .text-sm {
       font-family: 'Segoe UI';
       font-size: 24px;
       font-weight: 300;
     }
 
-    .tentang{
-        color: white;
-        height: 500px;
+    .tentang, .bantuan {
+      color: white;
+      margin: 50px;
     }
 
     .isi {
-     position: relative;
-     top: 90px;
-     margin: 50px;
+      position: fix;
+      top: 90px;
+    }
+    li{
+      margin-bottom: 4px;
     }
   </style>
-  
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-dark mb-10">
-      <div class="container-fluid p-2">
-          <a class="navbar-brand text-light ms-5" href="#">My Fitness</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-              aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon bg-light"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarContent">
-              <ul class="navbar-nav mx-auto">
-                  <li class="nav-item mx-5">
-                      <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Progresku</a>
-                  </li>
-                  <li class="nav-item mx-5">
-                      <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Tentang</a>
-                  </li>
-                  <li class="nav-item mx-5">
-                      <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Bantuan</a>
-                  </li>
-              </ul>
-              <div class="d-flex ms-5">
-                  <a href="#" class="btn btn-light px-4 fw-bold">SIGN UP</a>
-              </div>
-          </div>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-dark mb-10">
+    <div class="container-fluid p-2">
+      <a class="navbar-brand text-light ms-5" href="#">My Fitness</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon bg-light"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item mx-5">
+            <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Progresku</a>
+          </li>
+          <li class="nav-item mx-5">
+            <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Tentang</a>
+          </li>
+          <li class="nav-item mx-5">
+            <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Bantuan</a>
+          </li>
+        </ul>
+        <div class="d-flex ms-5">
+          <a href="#" class="btn btn-light px-4 fw-bold">SIGN UP</a>
+        </div>
       </div>
+    </div>
   </nav>
 
   <div class="tentang">
@@ -79,28 +82,41 @@
       <p>Repo Projek PEMWEB</p>
       <p>The Falcon Team</p>
       <ul type="disc">
-          <li>Muhammad Syauqoni <a href="https://www.instagram.com/muhammad_syauqoni/?hl=en">@Muhammad_syauqoni</a></li>
-          <li>Akhmad Fitriannor <a href="https://www.instagram.com/ahfi1809/?hl=en">@ahfi1890</a></li>
-          <li>Muhammad Farros Shofiy <a href="https://www.instagram.com/bit.binner/?hl=en">@bit.binner</a></li>
+        <li>Muhammad Syauqoni <a href="https://www.instagram.com/muhammad_syauqoni/?hl=en">@Muhammad_syauqoni</a></li>
+        <li>Akhmad Fitriannor <a href="https://www.instagram.com/ahfi1809/?hl=en">@ahfi1890</a></li>
+        <li>Muhammad Farros Shofiy <a href="https://www.instagram.com/bit.binner/?hl=en">@bit.binner</a></li>
       </ul>
       <p>Project start : Mey 2024</p>
       <p>Lambung Mangkurat University, Computer Sience Edu.</p>
     </div>
   </div>
 
-  <footer class="text-center py-2" style="background-color: #D9D9D9;">
-    <div class="text-sm"><span class="fw-bold">My Fitness </span>| by The Falcon Team</div>
-    <div class="mt-2 justify-content-center gap-2">
-        <a href="https://www.instagram.com/educom23.ulm/" class="text-decoration-none text-white">
-          <box-icon name='instagram-alt' type='logo' ></box-icon>        
-        </a>
-        <a href="https://discord.gg/YrKarhSV" class="text-decoration-none text-white">
-          <box-icon name='discord-alt' type='logo' ></box-icon>        
-        </a>        
-        <a href="https://github.com/KizuAnee/Projek-pemweb1-The_Falcon.git" class="text-decoration-none text-white">
-          <box-icon name='github' type='logo' ></box-icon>        
-        </a>
-    </div>
-  </footer>
-  </body>
+  <div class="bantuan isi">
+    <h1>Bantuan</h1>
+    <ol>
+      <li>Pertama-tama, buat akun dengan menekan tombol <b>Get Started</b> atau <b>Sign Up</b></li>
+      <li>Jika Anda sudah memiliki akun, harap masuk dengan metode <b>Login</b></li>
+      <li>Pada Pop Up <b>Input Data User</b>, harap masukkan data <b>umur, tinggi, berat, jenis kelamin, dan program yang akan Anda ikuti</b></li>
+      <li>Selanjutnya, Anda akan diarahkan untuk login. Harap memasukkan Username dan Password yang sesuai</li>
+      <li>Selesai! Semoga Anda konsisten mengikuti program ini!</li>
+    </ol>
+  </div>
+
+</body>
+
+<footer class="text-center py-2" style="background-color: #D9D9D9; margin-bottom: 0;">
+  <div class="text-sm"><span class="fw-bold">My Fitness </span>| by The Falcon Team</div>
+  <div class="mt-2 justify-content-center gap-2">
+    <a href="https://www.instagram.com/educom23.ulm/" class="text-decoration-none text-white">
+      <box-icon name='instagram-alt' type='logo'></box-icon>
+    </a>
+    <a href="https://discord.gg/YrKarhSV" class="text-decoration-none text-white">
+      <box-icon name='discord-alt' type='logo'></box-icon>
+    </a>
+    <a href="https://github.com/KizuAnee/Projek-pemweb1-The_Falcon.git" class="text-decoration-none text-white">
+      <box-icon name='github' type='logo'></box-icon>
+    </a>
+  </div>
+</footer>
+
 </html>
