@@ -514,6 +514,74 @@
     </footer>
 </body>
 
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyCw0JQnVmwhXC_HrPk1lXja3iNs5tDA1Mk",
+        authDomain: "projek-pemweb-538e2.firebaseapp.com",
+        databaseURL: "https://projek-pemweb-538e2-default-rtdb.firebaseio.com",
+        projectId: "projek-pemweb-538e2",
+        storageBucket: "projek-pemweb-538e2.appspot.com",
+        messagingSenderId: "938803551824",
+        appId: "1:938803551824:web:43b89766ae169579527b55",
+        measurementId: "G-Z4P78BMM2X"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+    // Initialize Realtime Database and get a reference to the service
+    const database = getDatabase(app);
+
+    // Reference to your data
+    const dataRef = ref(database, 'users/defaultUser/data');
+
+    // BMR Calculation function using Harris-Benedict equation
+    function calculateBMR(age, gender, height, weight) {
+        if (gender.toLowerCase() === 'male') {
+            return 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+        } else {
+            return 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+        }
+    }
+
+    // TDEE Calculation function using a simple activity multiplier
+    function calculateTDEE(bmr, activityLevel = 1.2) { // Default activity level: Sedentary
+        return bmr * activityLevel;
+    }
+
+    // Get the data
+    onValue(dataRef, (snapshot) => {
+        const data = snapshot.val();
+        const dataDisplay = document.getElementById('demo4');
+        dataDisplay.innerHTML = ''; // Clear previous content
+
+        // Display the data
+        if (data) {
+            const age = parseInt(data.age);
+            const gender = data.gender;
+            const height = parseInt(data.height);
+            const weight = parseInt(data.weight);
+
+            const bmr = calculateBMR(age, gender, height, weight);
+            const tdee = calculateTDEE(bmr); // Using default activity level
+
+            const userDiv = document.createElement('div');
+            userDiv.innerHTML = `
+                <p> ${Math.round(tdee)} Kcal</p>
+            `;
+            dataDisplay.appendChild(userDiv);
+        } else {
+            dataDisplay.innerHTML = '<p>No data available</p>';
+        }
+
+        checkCalorieLimit();
+    });
+</script>
+
 <script>
     const DATE_KEY = 'currentDate';
     const STORAGE_KEY = 'totalSavedCalories';
@@ -665,6 +733,8 @@
             
             document.getElementById("demo1").textContent = hasil + " Kcal";
             document.getElementById("demo2").textContent = proteintotal + " gram";
+
+            checkCalorieLimit();
         }
 
         // mengundo atau menghapus jika salah masukkan
@@ -682,6 +752,8 @@
 
             document.getElementById("demo1").textContent = hasil + " Kcal";
             document.getElementById("demo2").textContent = proteintotal + " gram";
+
+            checkCalorieLimit();
         }
         
         // mereset bagian perhitungan
@@ -700,6 +772,7 @@
                 numberContainer.removeChild(numberContainer.firstChild);
             }
 
+            checkCalorieLimit();
             saveData();
         }
         
@@ -726,6 +799,8 @@
             } else {
                 document.getElementById("demo3").textContent = "0 Kcal";
             }
+
+            checkCalorieLimit();
         }
 
         // menyimpan data di local storage
@@ -733,13 +808,27 @@
             localStorage.setItem(STORAGE_KEY, totalSavedCalories);
         }
 
-        window.addEventListener('load', () => {
-            const baru = sessionStorage.getItem('hasil');
-            document.getElementById('demo4').innerHTML = baru;
-            })
+        // memeriksa demo3 lebih dari demo4 dan mengubah warna dan juga memberi peringatan
+        function checkCalorieLimit() {
+            const demo3 = document.getElementById("demo3");
+            const demo4 = document.getElementById("demo4").querySelector('p');
 
-        document.addEventListener('DOMContentLoaded', loadData);
-    </script>
+            if (demo3 && demo4) {
+                const demo3Value = parseInt(demo3.textContent);
+                const demo4Value = parseInt(demo4.textContent);
+
+                if (demo3Value > demo4Value) {
+                    demo3.style.color = 'red';
+                    alert("Anda melebihi batas harian");
+                } else {
+                    demo3.style.color = 'white';
+                }
+            }
+        }
+
+        loadData();
+</script>
+
 </html>
 
 </html>
