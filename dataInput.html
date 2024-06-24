@@ -86,9 +86,10 @@
 
       document.querySelector('button[type="submit"]').addEventListener('click', (event) => {
         event.preventDefault();
+        calculateCalories();
+        saveData();
       });
     });
-
 
   </script>
 </head>
@@ -102,8 +103,7 @@
             <div class="mb-md-5 mt-md-4 form-section">
               <h2 class="fw-bold mb-2 text-center">Complete your personal details</h2>
               <p class="small text-white-50 text-center">The data you fill in will be our benchmark in creating
-                appropriate
-                exercises!</p>
+                appropriate exercises!</p>
 
               <label class="form-label" for="ageInput">Age</label>
               <div class="form-outline form-white mb-4">
@@ -149,10 +149,15 @@
               <div class="text-end">
                 <!-- to homepage -->
                 <form action="#" method="post">
-                  <input class="btn btn-outline-light flex-row-reverse btn-lg px-5" type="submit" value="Save Data"
-                    onclick="calculateCalories()">
+                  <button class="btn btn-outline-light flex-row-reverse btn-lg px-5" type="submit">Save Data</button>
                 </form>
               </div>
+
+              <!-- Display total calories -->
+              <div class="mt-4">
+                <p id="total" class="small text-white-75"></p>
+              </div>
+
             </div>
           </div>
         </div>
@@ -211,7 +216,6 @@
       }
     }
   </script>
-
 
 </body>
 
