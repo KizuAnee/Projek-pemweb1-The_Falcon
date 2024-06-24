@@ -440,7 +440,7 @@
                   <div class="text-end">
                     <!-- Button to save data -->
                     <button type="button" class="btn btn-datainput btn-outline-light flex-row-reverse btn-lg px-5"
-                      onclick="calculateCalories()">Save Data</button>
+                      onclick="calculateCalories(this)">Save Data</button>
                   </div>
                 </form>
                 <!-- End Form -->
@@ -590,28 +590,9 @@
     var usernameDisplay = document.getElementById("usernameDisplay");
     usernameDisplay.textContent = "Username: " + username;
 
-    // function completeData() {
-    //   var age = document.getElementById("ageInput").value;
-    //   var weight = document.getElementById("weightInput").value;
-    //   var height = document.getElementById("heightInput").value;
-    //   var gender = document.querySelector('input[name="gender"]:checked').value;
-
-    //   if (age === "" || weight === "" || height === "" || gender === "") {
-    //     alert("Please fill out all the fields.");
-    //     return;
-    //   }
-
-    //   // Close the data input modal
-    //   var dataInputModal = new bootstrap.Modal(document.getElementById('DataInputModal'));
-    //   dataInputModal.hide();
-
-    //   // Show the login modal
-    //   var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
-    //   loginModal.show();
-    // }
-
     // data input
-    window.calculateCalories = async function () {
+    async function calculateCalories(get){
+      console.log(this)
       const username = sessionStorage.getItem('username') || 'defaultUser';
       const age = parseInt(document.getElementById('ageInput').value);
       const weight = parseInt(document.getElementById('weightInput').value);
