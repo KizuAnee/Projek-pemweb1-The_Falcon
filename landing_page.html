@@ -230,9 +230,8 @@
             </li>
           </ul>
           <div class="d-flex ms-5">
-            <box-icon id="user-icon" name='user-circle' type='solid' color='#ffffff'
-            style="width: 65px; height: 36px;" title=""
-              data-bs-toggle="modal" data-bs-target="#logoutModal"></box-icon>
+            <box-icon id="user-icon" name='user-circle' type='solid' color='#ffffff' style="width: 65px; height: 36px;"
+              title="" data-bs-toggle="modal" data-bs-target="#logoutModal"></box-icon>
           </div>
         </div>
       </div>
@@ -244,8 +243,8 @@
   <div class="container-fluid p-5 content1">
     <h1 class="text-container1 text-white fw-light m-5">TURN YOUR <br>EMOTION <br>INTO <span
         class="text-warning">POWER</span></h1>
-    <button id="buttonGetStarted" type="button" class="btn btn-content px-5 py-3 btn-light fw-bold mx-5" data-bs-toggle="modal"
-      data-bs-target="#SignUpModal">GET STARTED</button>
+    <button id="buttonGetStarted" type="button" class="btn btn-content px-5 py-3 btn-light fw-bold mx-5"
+      data-bs-toggle="modal" data-bs-target="#SignUpModal">GET STARTED</button>
   </div>
 
   <!-- second -->
@@ -293,7 +292,7 @@
                   <input type="text" class="form-control" id="username" placeholder="Enter username" name="username"
                     required>
                   <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">Please fill out this field.</div>
+                  <div class="invalid-feedback">Please fill out field.</div>
                 </div>
 
                 <label for="pwd" class="form-label">Password</label>
@@ -301,7 +300,7 @@
                   <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd"
                     required>
                   <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">Please fill out this field.</div>
+                  <div class="invalid-feedback">Please fill out field.</div>
                 </div>
 
                 <div class="d-flex justify-content-between pb-lg-2 mb-3">
@@ -341,7 +340,7 @@
                   <input type="text" class="form-control" id="signup-username" placeholder="Enter username"
                     name="username" required>
                   <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">Please fill out this field.</div>
+                  <div class="invalid-feedback">Please fill out field.</div>
                 </div>
 
                 <label for="pwd" class="form-label">Password</label>
@@ -349,7 +348,7 @@
                   <input type="password" class="form-control" id="signup-pwd" placeholder="Enter password" name="pswd"
                     required>
                   <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">Please fill out this field.</div>
+                  <div class="invalid-feedback">Please fill out field.</div>
                 </div>
 
                 <label for="confirmPwd" class="form-label">Confirm Password</label>
@@ -357,7 +356,7 @@
                   <input type="password" class="form-control" id="confirmPwd" placeholder="Enter password" name="pswd"
                     required>
                   <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">Please fill out this field.</div>
+                  <div class="invalid-feedback">Please fill out field.</div>
                 </div>
 
                 <div class="d-flex justify-content-between pb-lg-2 mb-3">
@@ -384,76 +383,84 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
-          <div class="card-datainput text-white" style="border-radius: 1rem;">
+
+          <div class="card card-datainput text-white" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
               <div class="mb-md-5 mt-md-4 form-section">
                 <h2 class="fw-bold mb-2 text-center">Complete your personal details</h2>
                 <p class="small text-white-50 text-center">The data you fill in will be our benchmark in creating
                   appropriate exercises!</p>
 
-                <!-- Form -->
-                <form id="dataInputForm" action="#" method="post">
+                <label class="form-label" for="ageInput">Age</label>
+                <div class="form-outline form-white mb-4">
+                  <input type="number" id="ageInput" class="form-control form-control-lg" />
+                </div>
 
-                  <label class="form-label" for="ageInput">Age</label>
-                  <div class="form-outline form-white mb-4">
-                    <input type="number" id="ageInput" class="form-control form-control-lg" required />
+                <label class="form-label" for="weightInput">Body Weight</label>
+                <div class="form-outline form-white mb-4">
+                  <input type="number" id="weightInput" class="form-control form-control-lg" />
+                </div>
+
+                <label class="form-label" for="heightInput">Height</label>
+                <div class="form-outline form-white mb-4">
+                  <input type="number" id="heightInput" class="form-control form-control-lg" />
+                </div>
+
+                <div class="col-md-6 mb-4">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="maleGender" value="male" />
+                    <label class="form-check-label" for="maleGender">Male</label>
                   </div>
-
-                  <label class="form-label" for="weightInput">Body Weight</label>
-                  <div class="form-outline form-white mb-4">
-                    <input type="number" id="weightInput" class="form-control form-control-lg" required />
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="female"
+                      checked />
+                    <label class="form-check-label" for="femaleGender">Female</label>
                   </div>
+                </div>
 
-                  <label class="form-label" for="heightInput">Height</label>
-                  <div class="form-outline form-white mb-4">
-                    <input type="number" id="heightInput" class="form-control form-control-lg" required />
-                  </div>
+                <p class="small text-white-75">Which exercise program do you want to start?</p>
+                <div class="mb-4 d-flex gap-2">
+                  <button type="button" class="btn btn-outline-light btn-lg program">Bulking</button>
+                  <p class="my-auto">or</p>
+                  <button type="button" class="btn btn-outline-light btn-lg program">Cutting</button>
+                </div>
 
-                  <div class="col-md-6 mb-4">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="gender" id="maleGender" value="male"
-                        required />
-                      <label class="form-check-label" for="maleGender">Male</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="female"
-                        checked required />
-                      <label class="form-check-label" for="femaleGender">Female</label>
-                    </div>
-                  </div>
+                <p class="small text-white-75">Before confirming, type your password</p>
+                <div class="form-outline mb-4">
+                  <input type="password" id="passwordInput" class="form-control form-control-lg" />
+                </div>
 
-                  <p class="small text-white-75">Which exercise program do you want to start?</p>
-                  <div class="mb-4 d-flex gap-2">
-                    <button type="button" class="btn btn-datainput btn-outline-light btn-lg program">Bulking</button>
-                    <p class="my-auto">or</p>
-                    <button type="button" class="btn btn-datainput btn-outline-light btn-lg program">Cutting</button>
-                  </div>
+                <p class="small text-white-55 text-center">By clicking <b>confirm</b>, you agree to our <b>User
+                    Agreement,
+                    Privacy Policy, and Cookie Policy</b></p>
 
-                  <p class="small text-white-75">Before confirming, type your password</p>
-                  <div class="form-outline mb-4">
-                    <input type="password" id="passwordInput" class="form-control form-control-lg" required />
-                  </div>
+                <div class="text-end">
+                  <!-- to homepage -->
+                  <form action="#" method="post">
+                    <button class="btn btn-outline-light flex-row-reverse btn-lg px-5" type="submit">Save Data</button>
+                  </form>
+                </div>
 
-                  <p class="small text-white-55 text-center">By clicking <b>confirm</b>, you agree to our <b>User
-                      Agreement, Privacy Policy, and Cookie Policy</b></p>
-
-                  <div class="text-end">
-                    <!-- Button to save data -->
-                    <button type="button" class="btn btn-datainput btn-outline-light flex-row-reverse btn-lg px-5"
-                      onclick="calculateCalories(this)">Save Data</button>
-                  </div>
-                </form>
-                <!-- End Form -->
-
-                <!-- Result display -->
-                <div id="total"></div>
+                <!-- Display total calories -->
+                <div class="mt-4">
+                  <p id="total" class="small text-white-75"></p>
+                </div>
 
               </div>
             </div>
           </div>
+
+          <!-- End Form -->
+
+          <!-- Result display -->
+          <div id="total"></div>
+
         </div>
       </div>
     </div>
+  </div>
+  </div>
+  </div>
   </div>
 
 
@@ -477,22 +484,22 @@
   <script>
     window.onload = function () {
       const username = sessionStorage.getItem('username');
-            if (username) {
-                document.querySelector('.logged-in-header').style.display = 'block';
-                document.querySelector('.logged-out-header').style.display = 'none';
-                document.getElementById('user-icon').setAttribute('title', username);
-            } else {
-                document.querySelector('.logged-in-header').style.display = 'none';
-                document.querySelector('.logged-out-header').style.display = 'block';
-                document.getElementById('user-icon').setAttribute('title', 'Guest');
-            }
-        }
+      if (username) {
+        document.querySelector('.logged-in-header').style.display = 'block';
+        document.querySelector('.logged-out-header').style.display = 'none';
+        document.getElementById('user-icon').setAttribute('title', username);
+      } else {
+        document.querySelector('.logged-in-header').style.display = 'none';
+        document.querySelector('.logged-out-header').style.display = 'block';
+        document.getElementById('user-icon').setAttribute('title', 'Guest');
+      }
+    }
 
     function logout() {
       sessionStorage.removeItem('username');
       window.location.href = 'landing_page.html';
     }
-    
+
   </script>
 
 
@@ -557,11 +564,11 @@
       var dataInputModal = new bootstrap.Modal(document.getElementById('DataInputModal'));
 
 
-      if (!username|| !password|| !confirmPassword) {
+      if (!username || !password || !confirmPassword) {
         alert("Please fill out all the fields.");
         return;
       }
-      if (password != confirmPassword){
+      if (password != confirmPassword) {
         alert("Password do not match")
         return;
       }
@@ -591,15 +598,13 @@
     usernameDisplay.textContent = "Username: " + username;
 
     // data input
-    async function calculateCalories(get){
-      console.log(this)
-      const username = sessionStorage.getItem('username') || 'defaultUser';
+    window.saveData = async function () {
+      const username = sessionStorage.getItem('username') || 'defaultUser'; // Menetapkan nilai default jika 'username' null
       const age = parseInt(document.getElementById('ageInput').value);
       const weight = parseInt(document.getElementById('weightInput').value);
       const height = parseInt(document.getElementById('heightInput').value);
       const gender = document.querySelector('input[name="gender"]:checked').value;
       const program = document.querySelector('button.active').innerText.toLowerCase();
-      const password = document.getElementById('passwordInput').value;
 
       // Validate inputs
       if (!age || !weight || !height || !gender || !password) {
@@ -617,9 +622,8 @@
       }
 
       try {
-        // Save data to Firebase
         const db = getDatabase(app);
-        const userRef = ref(db, 'users/' + username.replace(/[.$\[\]#\/]/g, ',') + '/data');
+        const userRef = ref(db, 'users/' + username.replace(/[.$\[\]#\/]/g, ',') + '/data'); // Menggunakan username yang telah diolah
         await set(userRef, {
           age: age,
           weight: weight,
@@ -628,46 +632,39 @@
           program: program
         });
 
-        // Save user data to sessionStorage
-        sessionStorage.setItem('userData', JSON.stringify({
-          age,
-          weight,
-          height,
-          gender
-        }));
-
         alert('Data saved successfully');
-        window.location.href = 'landing_page.html';
+        sessionStorage.setItem('userData', JSON.stringify({ age, weight, height, gender }));
+        window.location.href = 'home.html';
       } catch (error) {
         alert('Error saving data: ' + error.message);
       }
-
-      // kalkulator
-      let bmr;
-
-      // Calculate BMR using the Harris-Benedict equation
-      if (gender === 'male') {
-        bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
-      } else {
-        bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
-      }
-
-      // Calculate TDEE assuming a moderate activity level
-      const tdee = bmr * 1.55;
-
-      let calories;
-      if (program === 'bulking') {
-        calories = tdee + 500;
-      } else {
-        calories = tdee - 500;
-      }
-
-      const total = `${Math.round(calories)} Kcal.`;
-      document.getElementById("total").textContent = total;
-      sessionStorage.setItem("hasil", total);
     }
 
     // kalkulator
+    let bmr;
+
+    // Calculate BMR using the Harris-Benedict equation
+    if (gender === 'male') {
+      bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+    } else {
+      bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+    }
+
+    // Calculate TDEE assuming a moderate activity level
+    const tdee = bmr * 1.55;
+
+    let calories;
+    if (program === 'bulking') {
+      calories = tdee + 500;
+    } else {
+      calories = tdee - 500;
+    }
+
+    const total = `${Math.round(calories)} Kcal.`;
+    document.getElementById("total").textContent = total;
+    sessionStorage.setItem("hasil", total);
+
+
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('button.program').forEach(button => {
         button.addEventListener('click', () => {
@@ -678,6 +675,8 @@
 
       document.querySelector('button[type="submit"]').addEventListener('click', (event) => {
         event.preventDefault();
+        calculateCalories();
+        saveData();
       });
     });
   </script>
@@ -690,7 +689,7 @@
     <a href="https://www.instagram.com/educom23.ulm/" class="text-decoration-none text-white">
       <box-icon name='instagram-alt' type='logo'></box-icon>
     </a>
-    <a href="https://discord.gg/YrKarhSV" class="text-decoration-none text-white">
+    <a href="https://discord.gg/JFZYuYef" class="text-decoration-none text-white">
       <box-icon name='discord-alt' type='logo'></box-icon>
     </a>
     <a href="https://github.com/KizuAnee/Projek-pemweb1-The_Falcon.git" class="text-decoration-none text-white">
