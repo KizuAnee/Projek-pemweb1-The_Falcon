@@ -223,8 +223,9 @@
         }
 
         footer {
-            position: relative;
             color: #232222;
+            background-color: gray;
+            position: relative;
             left: 0;
             bottom: 0;
             width: 100%;
@@ -319,25 +320,6 @@
             background-color: #232222;
         }
 
-        /* CSS login header */
-        .logged-in-header {
-            display: none;
-        }
-
-        .logged-out-header {
-            display: none;
-        }
-
-        /* button */
-        .btn-signup,
-        .btn-login,
-        .btn-header,
-        .btn-content {
-            border-radius: 25px;
-            border: none;
-            background-color: #FFBE5C;
-        }
-
         /* Media Queries for Responsive Design */
         @media (max-width: 768px) {
             .kalkulator {
@@ -383,39 +365,31 @@
 </head>
 
 <body>
-    <!-- navbar -->
-    <!-- loggout -->
-    <div id="navbar" class="logged-out-header">
-        <nav class="navbar navbar-expand-lg bg-black">
-            <div class="container-fluid p-2">
-                <a class="navbar-brand text-light ms-5" href="first_page.html">My Fitness</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon bg-light"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarContent">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item mx-5">
-                            <a class="nav-link active text-light fw-bold" data-bs-toggle="modal"
-                                data-bs-target="#loginModal" aria-current="page" href="#">Progresku</a>
-                        </li>
-                        <li class="nav-item mx-5">
-                            <a class="nav-link active text-light fw-bold" href="tentang.html">Tentang</a>
-                        </li>
-                        <li class="nav-item mx-5">
-                            <a class="nav-link active text-light fw-bold" href="tentang.html">Bantuan</a>
-                        </li>
-                    </ul>
-                    <div class="d-flex ms-5">
-                        <a href="landing_page.html">
-                            <button type="button" class="btn btn-header px-4 btn-light fw-bold">SIGN UP</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <!-- login -->
+<<<<<<< HEAD
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid p-2">
+            <a class="navbar-brand text-light ms-5" href="landing_page.html">My Fitness</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon bg-light"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item mx-5">
+                        <a class="nav-link active text-light fw-bold" aria-current="page" href="home.html">Progresku</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link active text-light fw-bold" aria-current="page"
+                            href="tentang.html">Tentang</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link active text-light fw-bold" aria-current="page"
+                            href="tentang.html">Bantuan</a>
+                    </li>
+                </ul>
+                <div class="d-flex ms-5">
+                    <a href="#" class="btn btn-light px-4 fw-bold">SIGN UP</a>
+=======
     <div id="navbar" class="logged-in-header">
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container-fluid p-2">
@@ -427,44 +401,25 @@
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item mx-5">
-                            <a class="nav-link active text-light fw-bold" aria-current="page"
-                                href="home.html">Progresku</a>
+                            <a class="nav-link active text-light fw-bold" aria-current="page" href="home.html">Progresku</a>
                         </li>
                         <li class="nav-item mx-5">
                             <a class="nav-link active text-light fw-bold" aria-current="page"
                                 href="tentang.html">Tentang</a>
                         </li>
                         <li class="nav-item mx-5">
-                            <a class="nav-link active text-light fw-bold" aria-current="page"
-                                href="tentang.html">Bantuan</a>
+                            <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Bantuan</a>
                         </li>
                     </ul>
                     <div class="d-flex ms-5">
-                        <box-icon id="user-icon" name='user-circle' type='solid' color='#ffffff'
-                            style="width: 65px; height: 36px;" title="" data-bs-toggle="modal"
-                            data-bs-target="#logoutModal"></box-icon>
+                        <box-icon name='user-circle' type='solid' color='#ffffff'
+                            style="width: 65px; height: 36px;"></box-icon>
                     </div>
+>>>>>>> b16f31418fd46050448f85a95a88888ba630aa25
                 </div>
             </div>
-        </nav>
+    </nav>
     </div>
-
-    <!-- Logout modal -->
-    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body text-center">
-                    <p style="color: black;">Are you sure you want to logout?</p>
-                    <div>
-                        <button type="button" class="btn btn-outline-secondary me-3"
-                            data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-danger" onclick="logout()">Logout</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div>
         <div class="kalkulator">
             <div class="kolom-kiri">
@@ -583,355 +538,331 @@
         </div>
     </div>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyCw0JQnVmwhXC_HrPk1lXja3iNs5tDA1Mk",
-            authDomain: "projek-pemweb-538e2.firebaseapp.com",
-            databaseURL: "https://projek-pemweb-538e2-default-rtdb.firebaseio.com",
-            projectId: "projek-pemweb-538e2",
-            storageBucket: "projek-pemweb-538e2.appspot.com",
-            messagingSenderId: "938803551824",
-            appId: "1:938803551824:web:43b89766ae169579527b55",
-            measurementId: "G-Z4P78BMM2X"
-        };
-
-        const app = initializeApp(firebaseConfig);
-
-        const database = getDatabase(app);
-
-        const dataRef = ref(database, 'users/defaultUser/data');
-
-        // fungsi menghitung bmr
-        function calculateBMR(age, gender, height, weight) {
-            if (gender.toLowerCase() === 'male') {
-                return 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
-            } else {
-                return 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
-            }
-        }
-
-        // fungsi menghitung tdee
-        function calculateTDEE(bmr, activityLevel = 1.2) {
-            return bmr * activityLevel;
-        }
-
-        // Dapatkan data
-        onValue(dataRef, (snapshot) => {
-            const data = snapshot.val();
-            const dataDisplay = document.getElementById('demo4');
-            dataDisplay.innerHTML = '';
-
-            // menampilkan data
-            if (data) {
-                const age = parseInt(data.age);
-                const gender = data.gender;
-                const height = parseInt(data.height);
-                const weight = parseInt(data.weight);
-
-                const bmr = calculateBMR(age, gender, height, weight);
-                const tdee = calculateTDEE(bmr);
-                const userDiv = document.createElement('div');
-                userDiv.innerHTML = `
-                    <p> ${Math.round(tdee)} Kcal</p>
-                `;
-                dataDisplay.appendChild(userDiv);
-            } else {
-                dataDisplay.innerHTML = '<p>0 Kcal</p>';
-            }
-
-            checkCalorieLimit();
-        });
-    </script>
-
-    <script>
-
-        const DATE_KEY = 'currentDate';
-        const STORAGE_KEY = 'totalSavedCalories';
-        let hasil = 0;
-        let proteintotal = 0;
-        let totalSavedCalories = 0;
-        let history = [];
-
-        // bagian kalori makanan dan penjumlahannya
-        function myFunction(type) {
-            let kalori = 0;
-            let protein = 0;
-            // Bagian tahu
-            const tahurebus = 80;
-            const tahugoreng = 200;
-            const tahubakar = 105;
-            const proteintahu = 8;
-
-            // Bagian tempe
-            const temperebus = 140;
-            const tempegoreng = 250;
-            const tempebakar = 170;
-            const proteintempe = 18;
-
-            // Bagian ayam
-            const ayamrebus = 165;
-            const ayamgoreng = 260;
-            const ayambakar = 190;
-            const proteinayam = 31;
-
-            // Bagian daging
-            const dagingrebus = 250;
-            const daginggoreng = 350;
-            const dagingbakar = 275;
-            const proteindaging = 26;
-
-
-            // Bagian telur
-            const telurrebus = 155;
-            const telurgoreng = 201;
-            const proteintelur = 13;
-
-
-            // bagian tahu
-            if (type === 'tahurebus') {
-                kalori = tahurebus;
-                protein = proteintahu;
-
-            }
-
-            else if (type === 'tahugoreng') {
-                kalori = tahugoreng;
-                protein = proteintahu;
-
-            }
-
-            else if (type === 'tahubakar') {
-                kalori = tahubakar;
-                protein = proteintahu;
-
-            }
-
-
-            // bagian tempe
-            if (type === 'temperebus') {
-                kalori = temperebus;
-                protein = proteintempe;
-
-            }
-
-            else if (type === 'tempegoreng') {
-                kalori = tempegoreng;
-                protein = proteintempe;
-
-            }
-
-            else if (type === 'tempebakar') {
-                kalori = tempebakar;
-                protein = proteintempe;
-
-            }
-
-
-            // bagian ayam
-            if (type === 'ayamrebus') {
-                kalori = ayamrebus;
-                protein = proteinayam;
-
-            }
-
-            else if (type === 'ayamgoreng') {
-                kalori = ayamgoreng;
-                protein = proteinayam;
-
-            }
-
-            else if (type === 'ayambakar') {
-                kalori = ayambakar;
-                protein = proteinayam;
-
-            }
-
-
-            // bagian daging
-            if (type === 'dagingrebus') {
-                kalori = dagingrebus;
-                protein = proteindaging;
-
-            }
-
-            else if (type === 'daginggoreng') {
-                kalori = daginggoreng;
-                protein = proteindaging;
-
-            }
-
-            else if (type === 'dagingbakar') {
-                kalori = dagingbakar;
-                protein = proteindaging;
-
-            }
-
-
-            // bagian telur 
-            else if (type === 'telurrebus') {
-                kalori = telurrebus;
-                protein = proteintelur;
-            }
-
-            else if (type === 'telurgoreng') {
-                kalori = telurgoreng;
-                protein = proteintelur;
-            }
-
-            history.push({ type, kalori, protein });
-
-            const numberContainer = document.getElementById("demo");
-
-            const newSpan = document.createElement('span');
-            newSpan.textContent = kalori;
-            numberContainer.appendChild(newSpan);
-
-            const plusSpan = document.createElement('span');
-            plusSpan.textContent = '+';
-            numberContainer.appendChild(plusSpan);
-
-            hasil += kalori;
-            proteintotal += protein;
-
-            document.getElementById("demo1").textContent = hasil + " Kcal";
-            document.getElementById("demo2").textContent = proteintotal + " gram";
-
-            checkCalorieLimit();
-        }
-
-        // mengundo atau menghapus jika salah masukkan
-        function undo() {
-            if (history.length === 0) return;
-
-            const lastEntry = history.pop();
-
-            hasil -= lastEntry.kalori;
-            proteintotal -= lastEntry.protein;
-
-            const numberContainer = document.getElementById("demo");
-            numberContainer.removeChild(numberContainer.lastChild);
-            numberContainer.removeChild(numberContainer.lastChild);
-
-            document.getElementById("demo1").textContent = hasil + " Kcal";
-            document.getElementById("demo2").textContent = proteintotal + " gram";
-
-            checkCalorieLimit();
-        }
-
-        // mereset bagian perhitungan
-        function resetValues() {
-            totalSavedCalories += hasil;
-            hasil = 0;
-            proteintotal = 0;
-            let history = [];
-
-            document.getElementById("demo1").innerHTML = hasil + " Kcal";
-            document.getElementById("demo2").innerHTML = proteintotal + " gram";
-            document.getElementById("demo3").innerHTML = totalSavedCalories + " Kcal";
-
-            const numberContainer = document.getElementById("demo");
-            while (numberContainer.firstChild) {
-                numberContainer.removeChild(numberContainer.firstChild);
-            }
-
-            checkCalorieLimit();
-            saveData();
-        }
-
-        // mengembalikan ke awal ketika ganti tanggal
-        function getTodayDateString() {
-            const today = new Date();
-            return today.toISOString().split('T')[0];
-        }
-
-        // memeriksa tanggal sesuai dengan hari ini
-        function loadData() {
-            const savedDate = localStorage.getItem(DATE_KEY);
-            const todayDate = getTodayDateString();
-
-            if (savedDate !== todayDate) {
-                localStorage.removeItem(STORAGE_KEY);
-                localStorage.setItem(DATE_KEY, todayDate);
-            }
-
-            const data = localStorage.getItem(STORAGE_KEY);
-            if (data) {
-                totalSavedCalories = parseInt(data, 10);
-                document.getElementById("demo3").textContent = totalSavedCalories + " Kcal";
-            } else {
-                document.getElementById("demo3").textContent = "0 Kcal";
-            }
-
-            checkCalorieLimit();
-        }
-
-        // menyimpan data di local storage
-        function saveData() {
-            localStorage.setItem(STORAGE_KEY, totalSavedCalories);
-        }
-
-        // memeriksa demo3 lebih dari demo4 dan mengubah warna dan juga memberi peringatan
-        function checkCalorieLimit() {
-            const demo3 = document.getElementById("demo3");
-            const demo4 = document.getElementById("demo4").querySelector('p');
-
-            if (demo3 && demo4) {
-                const demo3Value = parseInt(demo3.textContent);
-                const demo4Value = parseInt(demo4.textContent);
-
-                if (demo3Value > demo4Value) {
-                    demo3.style.color = 'red';
-                    alert("Anda melebihi batas harian");
-                } else {
-                    demo3.style.color = 'white';
-                }
-            }
-        }
-
-        loadData();
-    </script>
-    <!-- script login header, masukkan ke body akhir -->
-    <!-- script login header -->
-    <script>
-        window.onload = function () {
-            const username = sessionStorage.getItem('username');
-            if (username) {
-                document.querySelector('.logged-in-header').style.display = 'block';
-                document.querySelector('.logged-out-header').style.display = 'none';
-                document.getElementById('user-icon').setAttribute('title', username);
-            } else {
-                document.querySelector('.logged-in-header').style.display = 'none';
-                document.querySelector('.logged-out-header').style.display = 'block';
-                document.getElementById('user-icon').setAttribute('title', 'Guest');
-            }
-        }
-
-        function logout() {
-            sessionStorage.removeItem('username');
-            window.location.href = 'landing_page.html';
-        }
-
-    </script>
-
+    <footer class="text-center py-2" style="background-color: #D9D9D9;">
+        <div class="text-sm"><span class="fw-bold">My Fitness </span>| by The Falcon Team</div>
+        <div class="mt-2 justify-content-center gap-2">
+            <a href="https://www.instagram.com/educom23.ulm/" class="text-decoration-none text-white">
+                <box-icon name='instagram-alt' type='logo'></box-icon>
+            </a>
+            <a href="https://discord.gg/YrKarhSV" class="text-decoration-none text-white">
+                <box-icon name='discord-alt' type='logo'></box-icon>
+            </a>
+            <a href="https://github.com/KizuAnee/Projek-pemweb1-The_Falcon.git" class="text-decoration-none text-white">
+                <box-icon name='github' type='logo'></box-icon>
+            </a>
+        </div>
+    </footer>
 </body>
 
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-<footer class="text-center py-2" style="background-color: #D9D9D9;">
-    <div class="text-sm"><span class="fw-bold">My Fitness </span>| by The Falcon Team</div>
-    <div class="mt-2 justify-content-center gap-2">
-        <a href="https://www.instagram.com/educom23.ulm/" class="text-decoration-none text-white">
-            <box-icon name='instagram-alt' type='logo'></box-icon>
-        </a>
-        <a href="https://discord.gg/JFZYuYef" class="text-decoration-none text-white">
-            <box-icon name='discord-alt' type='logo'></box-icon>
-        </a>
-        <a href="https://github.com/KizuAnee/Projek-pemweb1-The_Falcon.git" class="text-decoration-none text-white">
-            <box-icon name='github' type='logo'></box-icon>
-        </a>
-    </div>
-</footer>
+    const firebaseConfig = {
+        apiKey: "AIzaSyCw0JQnVmwhXC_HrPk1lXja3iNs5tDA1Mk",
+        authDomain: "projek-pemweb-538e2.firebaseapp.com",
+        databaseURL: "https://projek-pemweb-538e2-default-rtdb.firebaseio.com",
+        projectId: "projek-pemweb-538e2",
+        storageBucket: "projek-pemweb-538e2.appspot.com",
+        messagingSenderId: "938803551824",
+        appId: "1:938803551824:web:43b89766ae169579527b55",
+        measurementId: "G-Z4P78BMM2X"
+    };
+
+    const app = initializeApp(firebaseConfig);
+
+    const database = getDatabase(app);
+
+    const dataRef = ref(database, 'users/defaultUser/data');
+
+    // fungsi menghitung bmr
+    function calculateBMR(age, gender, height, weight) {
+        if (gender.toLowerCase() === 'male') {
+            return 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+        } else {
+            return 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+        }
+    }
+
+    // fungsi menghitung tdee
+    function calculateTDEE(bmr, activityLevel = 1.2) {
+        return bmr * activityLevel;
+    }
+
+    // Dapatkan data
+    onValue(dataRef, (snapshot) => {
+        const data = snapshot.val();
+        const dataDisplay = document.getElementById('demo4');
+        dataDisplay.innerHTML = '';
+
+        // menampilkan data
+        if (data) {
+            const age = parseInt(data.age);
+            const gender = data.gender;
+            const height = parseInt(data.height);
+            const weight = parseInt(data.weight);
+
+            const bmr = calculateBMR(age, gender, height, weight);
+            const tdee = calculateTDEE(bmr);
+            const userDiv = document.createElement('div');
+            userDiv.innerHTML = `
+                <p> ${Math.round(tdee)} Kcal</p>
+            `;
+            dataDisplay.appendChild(userDiv);
+        } else {
+            dataDisplay.innerHTML = '<p>0 Kcal</p>';
+        }
+
+        checkCalorieLimit();
+    });
+</script>
+
+<script>
+
+    const DATE_KEY = 'currentDate';
+    const STORAGE_KEY = 'totalSavedCalories';
+    let hasil = 0;
+    let proteintotal = 0;
+    let totalSavedCalories = 0;
+    let history = [];
+
+    // bagian kalori makanan dan penjumlahannya
+    function myFunction(type) {
+        let kalori = 0;
+        let protein = 0;
+        // Bagian tahu
+        const tahurebus = 80;
+        const tahugoreng = 200;
+        const tahubakar = 105;
+        const proteintahu = 8;
+
+        // Bagian tempe
+        const temperebus = 140;
+        const tempegoreng = 250;
+        const tempebakar = 170;
+        const proteintempe = 18;
+
+        // Bagian ayam
+        const ayamrebus = 165;
+        const ayamgoreng = 260;
+        const ayambakar = 190;
+        const proteinayam = 31;
+
+        // Bagian daging
+        const dagingrebus = 250;
+        const daginggoreng = 350;
+        const dagingbakar = 275;
+        const proteindaging = 26;
+
+
+        // Bagian telur
+        const telurrebus = 155;
+        const telurgoreng = 201;
+        const proteintelur = 13;
+
+
+        // bagian tahu
+        if (type === 'tahurebus') {
+            kalori = tahurebus;
+            protein = proteintahu;
+
+        }
+
+        else if (type === 'tahugoreng') {
+            kalori = tahugoreng;
+            protein = proteintahu;
+
+        }
+
+        else if (type === 'tahubakar') {
+            kalori = tahubakar;
+            protein = proteintahu;
+
+        }
+
+
+        // bagian tempe
+        if (type === 'temperebus') {
+            kalori = temperebus;
+            protein = proteintempe;
+
+        }
+
+        else if (type === 'tempegoreng') {
+            kalori = tempegoreng;
+            protein = proteintempe;
+
+        }
+
+        else if (type === 'tempebakar') {
+            kalori = tempebakar;
+            protein = proteintempe;
+
+        }
+
+
+        // bagian ayam
+        if (type === 'ayamrebus') {
+            kalori = ayamrebus;
+            protein = proteinayam;
+
+        }
+
+        else if (type === 'ayamgoreng') {
+            kalori = ayamgoreng;
+            protein = proteinayam;
+
+        }
+
+        else if (type === 'ayambakar') {
+            kalori = ayambakar;
+            protein = proteinayam;
+
+        }
+
+
+        // bagian daging
+        if (type === 'dagingrebus') {
+            kalori = dagingrebus;
+            protein = proteindaging;
+
+        }
+
+        else if (type === 'daginggoreng') {
+            kalori = daginggoreng;
+            protein = proteindaging;
+
+        }
+
+        else if (type === 'dagingbakar') {
+            kalori = dagingbakar;
+            protein = proteindaging;
+
+        }
+
+
+        // bagian telur 
+        else if (type === 'telurrebus') {
+            kalori = telurrebus;
+            protein = proteintelur;
+        }
+
+        else if (type === 'telurgoreng') {
+            kalori = telurgoreng;
+            protein = proteintelur;
+        }
+
+        history.push({ type, kalori, protein });
+
+        const numberContainer = document.getElementById("demo");
+
+        const newSpan = document.createElement('span');
+        newSpan.textContent = kalori;
+        numberContainer.appendChild(newSpan);
+
+        const plusSpan = document.createElement('span');
+        plusSpan.textContent = '+';
+        numberContainer.appendChild(plusSpan);
+
+        hasil += kalori;
+        proteintotal += protein;
+
+        document.getElementById("demo1").textContent = hasil + " Kcal";
+        document.getElementById("demo2").textContent = proteintotal + " gram";
+
+        checkCalorieLimit();
+    }
+
+    // mengundo atau menghapus jika salah masukkan
+    function undo() {
+        if (history.length === 0) return;
+
+        const lastEntry = history.pop();
+
+        hasil -= lastEntry.kalori;
+        proteintotal -= lastEntry.protein;
+
+        const numberContainer = document.getElementById("demo");
+        numberContainer.removeChild(numberContainer.lastChild);
+        numberContainer.removeChild(numberContainer.lastChild);
+
+        document.getElementById("demo1").textContent = hasil + " Kcal";
+        document.getElementById("demo2").textContent = proteintotal + " gram";
+
+        checkCalorieLimit();
+    }
+
+    // mereset bagian perhitungan
+    function resetValues() {
+        totalSavedCalories += hasil;
+        hasil = 0;
+        proteintotal = 0;
+        let history = [];
+
+        document.getElementById("demo1").innerHTML = hasil + " Kcal";
+        document.getElementById("demo2").innerHTML = proteintotal + " gram";
+        document.getElementById("demo3").innerHTML = totalSavedCalories + " Kcal";
+
+        const numberContainer = document.getElementById("demo");
+        while (numberContainer.firstChild) {
+            numberContainer.removeChild(numberContainer.firstChild);
+        }
+
+        checkCalorieLimit();
+        saveData();
+    }
+
+    // mengembalikan ke awal ketika ganti tanggal
+    function getTodayDateString() {
+        const today = new Date();
+        return today.toISOString().split('T')[0];
+    }
+
+    // memeriksa tanggal sesuai dengan hari ini
+    function loadData() {
+        const savedDate = localStorage.getItem(DATE_KEY);
+        const todayDate = getTodayDateString();
+
+        if (savedDate !== todayDate) {
+            localStorage.removeItem(STORAGE_KEY);
+            localStorage.setItem(DATE_KEY, todayDate);
+        }
+
+        const data = localStorage.getItem(STORAGE_KEY);
+        if (data) {
+            totalSavedCalories = parseInt(data, 10);
+            document.getElementById("demo3").textContent = totalSavedCalories + " Kcal";
+        } else {
+            document.getElementById("demo3").textContent = "0 Kcal";
+        }
+
+        checkCalorieLimit();
+    }
+
+    // menyimpan data di local storage
+    function saveData() {
+        localStorage.setItem(STORAGE_KEY, totalSavedCalories);
+    }
+
+    // memeriksa demo3 lebih dari demo4 dan mengubah warna dan juga memberi peringatan
+    function checkCalorieLimit() {
+        const demo3 = document.getElementById("demo3");
+        const demo4 = document.getElementById("demo4").querySelector('p');
+
+        if (demo3 && demo4) {
+            const demo3Value = parseInt(demo3.textContent);
+            const demo4Value = parseInt(demo4.textContent);
+
+            if (demo3Value > demo4Value) {
+                demo3.style.color = 'red';
+                alert("Anda melebihi batas harian");
+            } else {
+                demo3.style.color = 'white';
+            }
+        }
+    }
+
+    loadData();
+</script>
 
 </html>
