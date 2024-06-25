@@ -223,9 +223,8 @@
         }
 
         footer {
-            color: #232222;
-            background-color: gray;
             position: relative;
+            color: #232222;
             left: 0;
             bottom: 0;
             width: 100%;
@@ -320,6 +319,17 @@
             background-color: #232222;
         }
 
+        /* navbar */
+        /* CSS login header */
+        .logged-in-header {
+            display: none;
+        }
+
+        .logged-out-header {
+            display: none;
+        }
+
+
         /* Media Queries for Responsive Design */
         @media (max-width: 768px) {
             .kalkulator {
@@ -365,29 +375,39 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark">
-        <div class="container-fluid p-2">
-            <a class="navbar-brand text-light ms-5" href="landing_page.html">My Fitness</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon bg-light"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item mx-5">
-                        <a class="nav-link active text-light fw-bold" aria-current="page" href="home.html">Progresku</a>
-                    </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link active text-light fw-bold" aria-current="page"
-                            href="tentang.html">Tentang</a>
-                    </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link active text-light fw-bold" aria-current="page"
-                            href="tentang.html">Bantuan</a>
-                    </li>
-                </ul>
-                <div class="d-flex ms-5">
-                    <a href="#" class="btn btn-light px-4 fw-bold">SIGN UP</a>
+    <!-- navbar -->
+    <!-- loggout -->
+    <div id="navbar" class="logged-out-header">
+        <nav class="navbar navbar-expand-lg bg-black">
+            <div class="container-fluid p-2">
+                <a class="navbar-brand text-light ms-5" href="landing_page.html">My Fitness</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon bg-light"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item mx-5">
+                            <a class="nav-link active text-light fw-bold" data-bs-toggle="modal"
+                                data-bs-target="#loginModal" aria-current="page" href="#">Progresku</a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link active text-light fw-bold" href="tentang.html">Tentang</a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link active text-light fw-bold" href="tentang.html">Bantuan</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex ms-5">
+                        <a href="landing_page.html">
+                            <button type="button" class="btn btn-header px-4 btn-light fw-bold">SIGN UP</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- login -->
     <div id="navbar" class="logged-in-header">
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container-fluid p-2">
@@ -399,157 +419,202 @@
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item mx-5">
-                            <a class="nav-link active text-light fw-bold" aria-current="page" href="home.html">Progresku</a>
+                            <a class="nav-link active text-light fw-bold" aria-current="page"
+                                href="home.html">Progresku</a>
                         </li>
                         <li class="nav-item mx-5">
                             <a class="nav-link active text-light fw-bold" aria-current="page"
                                 href="tentang.html">Tentang</a>
                         </li>
                         <li class="nav-item mx-5">
-                            <a class="nav-link active text-light fw-bold" aria-current="page" href="#">Bantuan</a>
+                            <a class="nav-link active text-light fw-bold" aria-current="page"
+                                href="tentang.html">Bantuan</a>
                         </li>
                     </ul>
                     <div class="d-flex ms-5">
-                        <box-icon name='user-circle' type='solid' color='#ffffff'
-                            style="width: 65px; height: 36px;"></box-icon>
+                        <box-icon id="user-icon" name='user-circle' type='solid' color='#ffffff'
+                            style="width: 65px; height: 36px;" title="" data-bs-toggle="modal"
+                            data-bs-target="#logoutModal"></box-icon>
                     </div>
                 </div>
             </div>
-    </nav>
+        </nav>
     </div>
-    <div>
-        <div class="kalkulator">
-            <div class="kolom-kiri">
-                <h1 id="demo"></h1><br>
-                <input id="demo6" type="button" value="<" onclick="undo()">
-                <input id="demo5" type="button" value=">" onclick="resetValues()">
-                <hr class="garis-kalkulator-kiri">
-                <h3 class="total"><b>TOTAL</b></h3>
-                <h1 id="demo1">0 Kcal</h1>
-            </div>
-            <div class="kolom-kanan-atas">
-                <h2 class="protein"><b>PROTEIN</b></h2><br>
-                <h1 id="demo2"><b>0 gram</b></h1>
-            </div>
-            <div class="kolom-kanan-bawah">
-                <h2 class="today">TODAY</h2>
-                <h1 id="demo3"><b>0 Kcal</b></h1>
-                <hr class="garis-kalkulator-kanan">
-                <h2 class="max"><b>MAX</b></h2>
-                <h1 id="demo4"><b>0 Kcal</b></h1>
-            </div>
-        </div>
-
-    </div>
-    <div class="perhatian">
-        <hr class="garis-perhatian">
-        <p><b>Perhatian!!!</b> Berikut ini hanyalah Mencantumkan makanan umum beserta kandungan proteinnya.
-            Jika Anda mengonsumsi makanan di luar makanan tersebut, silakan cek kandungan gizinya di situs web terkait.
-
-            Untuk informasi lebih lanjut tentang kandungan gizi makanan lain,
-            Anda dapat mengunjungi situs-situs seperti USDA FoodData Central atau FatSecret.</p>
-        <hr class="garis-perhatian">
-    </div>
-    <div class="container">
-        <div class="section">
-            <img src="Gambar_Web_Kalkulator/tahu.png" alt="Tahu">
-            <div class="description">
-                <p class="keterangantahu">Tahu mengandung 8 gram protein per 100 gram (3-4 potong) <br>
-                    dan memiliki kalori yang berbeda
-                    tergantung metode cara <br> memasaknya.</p>
-                <ul class="titik1" type="disc">
-                    <li>Tahu rebus mengandung 80 kalori per 100gr</li>
-                    <li>Tahu goreng mengandung 200 kalori per 100gr</li>
-                    <li>Tahu bakar mengandung 105 kalori per 100gr</li>
-                </ul>
-                <input class="tombol1" type="submit" value="Rebus" onclick="myFunction('tahurebus')">
-                <input class="tombol1" type="submit" value="Goreng" onclick="myFunction('tahugoreng')">
-                <input class="tombol1" type="submit" value="Bakar" onclick="myFunction('tahubakar')">
-            </div>
-        </div>
-
-        <div class="section">
-            <img src="Gambar_Web_Kalkulator/tempe.png" alt="Tempe">
-            <div class="description">
-                <p class="keterangantempe">Tempe mengandung 18 gram protein per 100 gram (2 potong) <br>
-                    dan memiliki kalori yang berbeda
-                    tergantung metode cara <br> memasaknya.</p>
-                <ul class="titik2" type="disc">
-                    <li>Tempe rebus mengandung 140 kalori per 100gr</li>
-                    <li>Tempe goreng mengandung 250 kalori per 100gr</li>
-                    <li>Tempe bakar mengandung 170 kalori per 100gr</li>
-                </ul>
-                <input class="tombol2" type="submit" value="Rebus" onclick="myFunction('temperebus')">
-                <input class="tombol2" type="submit" value="Goreng" onclick="myFunction('tempegoreng')">
-                <input class="tombol2" type="submit" value="Bakar" onclick="myFunction('tempebakar')">
-            </div>
-        </div>
-
-        <div class="section">
-            <img src="Gambar_Web_Kalkulator/Ayam.png" alt="Ayam">
-            <div class="description">
-                <p class="keteranganayam">Ayam mengandung 31 gram protein per 100 gram (4-5 potong) <br>
-                    dan memiliki kalori yang berbeda
-                    tergantung metode cara <br> memasaknya.</p>
-                <ul class="titik3" type="disc">
-                    <li>Ayam rebus mengandung 165 kalori per 100gr</li>
-                    <li>Ayam goreng mengandung 260 kalori per 100gr</li>
-                    <li>Ayam bakar mengandung 190 kalori per 100gr</li>
-                </ul>
-                <input class="tombol3" type="submit" value="Rebus" onclick="myFunction('ayamrebus')">
-                <input class="tombol3" type="submit" value="Goreng" onclick="myFunction('ayamgoreng')">
-                <input class="tombol3" type="submit" value="Bakar" onclick="myFunction('ayambakar')">
-            </div>
-        </div>
-
-        <div class="section">
-            <img src="Gambar_Web_Kalkulator/daging.png" alt="Daging">
-            <div class="description">
-                <p class="keterangandaging">Daging mengandung 26 gram protein per 100 gram (3-4 potong) <br>
-                    dan memiliki kalori yang berbeda
-                    tergantung metode cara <br> memasaknya.</p>
-                <ul class="titik4" type="disc">
-                    <li>Daging rebus mengandung 250 kalori per 100gr</li>
-                    <li>Daging goreng mengandung 350 kalori per 100gr</li>
-                    <li>Daging bakar mengandung 275 kalori per 100gr</li>
-                </ul>
-                <input class="tombol4" type="submit" value="Rebus" onclick="myFunction('dagingrebus')">
-                <input class="tombol4" type="submit" value="Goreng" onclick="myFunction('daginggoreng')">
-                <input class="tombol4" type="submit" value="Bakar" onclick="myFunction('dagingbakar')">
-            </div>
-        </div>
-
-        <div class="section">
-            <img src="Gambar_Web_Kalkulator/telur.png" alt="Telur">
-            <div class="description">
-                <p class="keterangantelur">Telur mengandung 13 gram protein per 100 gram (2 potong) <br>
-                    dan memiliki kalori yang berbeda
-                    tergantung metode cara <br> memasaknya.</p>
-                <ul class="titik5" type="disc">
-                    <li>Telur rebus mengandung 155 kalori per 100gr</li>
-                    <li>Telur goreng mengandung 201 kalori per 100gr</li>
-                </ul>
-                <input class="tombol5" type="submit" value="Rebus" onclick="myFunction('telurrebus')">
-                <input class="tombol5" type="submit" value="Goreng" onclick="myFunction('telurgoreng')">
-            </div>
-        </div>
-    </div>
-
-    <footer class="text-center py-2" style="background-color: #D9D9D9;">
-        <div class="text-sm"><span class="fw-bold">My Fitness </span>| by The Falcon Team</div>
-        <div class="mt-2 justify-content-center gap-2">
-            <a href="https://www.instagram.com/educom23.ulm/" class="text-decoration-none text-white">
-                <box-icon name='instagram-alt' type='logo'></box-icon>
-            </a>
-            <a href="https://discord.gg/YrKarhSV" class="text-decoration-none text-white">
-                <box-icon name='discord-alt' type='logo'></box-icon>
-            </a>
-            <a href="https://github.com/KizuAnee/Projek-pemweb1-The_Falcon.git" class="text-decoration-none text-white">
-                <box-icon name='github' type='logo'></box-icon>
-            </a>
-        </div>
-    </footer>
 </body>
+
+<!-- Logout modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <p style="color: black;">Are you sure you want to logout?</p>
+                <div>
+                    <button type="button" class="btn btn-outline-secondary me-3"
+                        data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <div class="kalkulator">
+        <div class="kolom-kiri">
+            <h1 id="demo"></h1><br>
+            <input id="demo6" type="button" value="<" onclick="undo()">
+            <input id="demo5" type="button" value=">" onclick="resetValues()">
+            <hr class="garis-kalkulator-kiri">
+            <h3 class="total"><b>TOTAL</b></h3>
+            <h1 id="demo1">0 Kcal</h1>
+        </div>
+        <div class="kolom-kanan-atas">
+            <h2 class="protein"><b>PROTEIN</b></h2><br>
+            <h1 id="demo2"><b>0 gram</b></h1>
+        </div>
+        <div class="kolom-kanan-bawah">
+            <h2 class="today">TODAY</h2>
+            <h1 id="demo3"><b>0 Kcal</b></h1>
+            <hr class="garis-kalkulator-kanan">
+            <h2 class="max"><b>MAX</b></h2>
+            <h1 id="demo4"><b>0 Kcal</b></h1>
+        </div>
+    </div>
+
+</div>
+<div class="perhatian">
+    <hr class="garis-perhatian">
+    <p><b>Perhatian!!!</b> Berikut ini hanyalah Mencantumkan makanan umum beserta kandungan proteinnya.
+        Jika Anda mengonsumsi makanan di luar makanan tersebut, silakan cek kandungan gizinya di situs web terkait.
+
+        Untuk informasi lebih lanjut tentang kandungan gizi makanan lain,
+        Anda dapat mengunjungi situs-situs seperti USDA FoodData Central atau FatSecret.</p>
+    <hr class="garis-perhatian">
+</div>
+<div class="container">
+    <div class="section">
+        <img src="Gambar_Web_Kalkulator/tahu.png" alt="Tahu">
+        <div class="description">
+            <p class="keterangantahu">Tahu mengandung 8 gram protein per 100 gram (3-4 potong) <br>
+                dan memiliki kalori yang berbeda
+                tergantung metode cara <br> memasaknya.</p>
+            <ul class="titik1" type="disc">
+                <li>Tahu rebus mengandung 80 kalori per 100gr</li>
+                <li>Tahu goreng mengandung 200 kalori per 100gr</li>
+                <li>Tahu bakar mengandung 105 kalori per 100gr</li>
+            </ul>
+            <input class="tombol1" type="submit" value="Rebus" onclick="myFunction('tahurebus')">
+            <input class="tombol1" type="submit" value="Goreng" onclick="myFunction('tahugoreng')">
+            <input class="tombol1" type="submit" value="Bakar" onclick="myFunction('tahubakar')">
+        </div>
+    </div>
+
+    <div class="section">
+        <img src="Gambar_Web_Kalkulator/tempe.png" alt="Tempe">
+        <div class="description">
+            <p class="keterangantempe">Tempe mengandung 18 gram protein per 100 gram (2 potong) <br>
+                dan memiliki kalori yang berbeda
+                tergantung metode cara <br> memasaknya.</p>
+            <ul class="titik2" type="disc">
+                <li>Tempe rebus mengandung 140 kalori per 100gr</li>
+                <li>Tempe goreng mengandung 250 kalori per 100gr</li>
+                <li>Tempe bakar mengandung 170 kalori per 100gr</li>
+            </ul>
+            <input class="tombol2" type="submit" value="Rebus" onclick="myFunction('temperebus')">
+            <input class="tombol2" type="submit" value="Goreng" onclick="myFunction('tempegoreng')">
+            <input class="tombol2" type="submit" value="Bakar" onclick="myFunction('tempebakar')">
+        </div>
+    </div>
+
+    <div class="section">
+        <img src="Gambar_Web_Kalkulator/Ayam.png" alt="Ayam">
+        <div class="description">
+            <p class="keteranganayam">Ayam mengandung 31 gram protein per 100 gram (4-5 potong) <br>
+                dan memiliki kalori yang berbeda
+                tergantung metode cara <br> memasaknya.</p>
+            <ul class="titik3" type="disc">
+                <li>Ayam rebus mengandung 165 kalori per 100gr</li>
+                <li>Ayam goreng mengandung 260 kalori per 100gr</li>
+                <li>Ayam bakar mengandung 190 kalori per 100gr</li>
+            </ul>
+            <input class="tombol3" type="submit" value="Rebus" onclick="myFunction('ayamrebus')">
+            <input class="tombol3" type="submit" value="Goreng" onclick="myFunction('ayamgoreng')">
+            <input class="tombol3" type="submit" value="Bakar" onclick="myFunction('ayambakar')">
+        </div>
+    </div>
+
+    <div class="section">
+        <img src="Gambar_Web_Kalkulator/daging.png" alt="Daging">
+        <div class="description">
+            <p class="keterangandaging">Daging mengandung 26 gram protein per 100 gram (3-4 potong) <br>
+                dan memiliki kalori yang berbeda
+                tergantung metode cara <br> memasaknya.</p>
+            <ul class="titik4" type="disc">
+                <li>Daging rebus mengandung 250 kalori per 100gr</li>
+                <li>Daging goreng mengandung 350 kalori per 100gr</li>
+                <li>Daging bakar mengandung 275 kalori per 100gr</li>
+            </ul>
+            <input class="tombol4" type="submit" value="Rebus" onclick="myFunction('dagingrebus')">
+            <input class="tombol4" type="submit" value="Goreng" onclick="myFunction('daginggoreng')">
+            <input class="tombol4" type="submit" value="Bakar" onclick="myFunction('dagingbakar')">
+        </div>
+    </div>
+
+    <div class="section">
+        <img src="Gambar_Web_Kalkulator/telur.png" alt="Telur">
+        <div class="description">
+            <p class="keterangantelur">Telur mengandung 13 gram protein per 100 gram (2 potong) <br>
+                dan memiliki kalori yang berbeda
+                tergantung metode cara <br> memasaknya.</p>
+            <ul class="titik5" type="disc">
+                <li>Telur rebus mengandung 155 kalori per 100gr</li>
+                <li>Telur goreng mengandung 201 kalori per 100gr</li>
+            </ul>
+            <input class="tombol5" type="submit" value="Rebus" onclick="myFunction('telurrebus')">
+            <input class="tombol5" type="submit" value="Goreng" onclick="myFunction('telurgoreng')">
+        </div>
+    </div>
+</div>
+
+<footer class="text-center py-2" style="background-color: #D9D9D9;">
+    <div class="text-sm"><span class="fw-bold">My Fitness </span>| by The Falcon Team</div>
+    <div class="mt-2 justify-content-center gap-2">
+        <a href="https://www.instagram.com/educom23.ulm/" class="text-decoration-none text-white">
+            <box-icon name='instagram-alt' type='logo'></box-icon>
+        </a>
+        <a href="https://discord.gg/YrKarhSV" class="text-decoration-none text-white">
+            <box-icon name='discord-alt' type='logo'></box-icon>
+        </a>
+        <a href="https://github.com/KizuAnee/Projek-pemweb1-The_Falcon.git" class="text-decoration-none text-white">
+            <box-icon name='github' type='logo'></box-icon>
+        </a>
+    </div>
+</footer>
+</body>    
+
+<!-- script login header, masukkan ke body akhir -->
+<!-- script login header -->
+<script>
+    window.onload = function () {
+        const username = sessionStorage.getItem('username');
+        if (username) {
+            document.querySelector('.logged-in-header').style.display = 'block';
+            document.querySelector('.logged-out-header').style.display = 'none';
+            document.getElementById('user-icon').setAttribute('title', username);
+        } else {
+            document.querySelector('.logged-in-header').style.display = 'none';
+            document.querySelector('.logged-out-header').style.display = 'block';
+            document.getElementById('user-icon').setAttribute('title', 'Guest');
+        }
+    }
+
+    function logout() {
+        sessionStorage.removeItem('username');
+        window.location.href = 'landing_page.html';
+    }
+
+</script>
 
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
@@ -861,5 +926,6 @@
 
     loadData();
 </script>
+
 
 </html>
